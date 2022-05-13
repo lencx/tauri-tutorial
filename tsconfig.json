@@ -17,12 +17,16 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
+      "@locales/*": ["./locales/*"],
       "@views/*": ["./src/views/*"],
       "@utils/*": ["./src/utils/*"],
       "@comps/*": ["./src/components/*"],
-      "@sys/*": ["./src/system/*"]
+      "@sys/*": ["./src/system/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "locales"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

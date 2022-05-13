@@ -216,7 +216,7 @@
     "@babel/plugin-syntax-jsx" "^7.16.7"
     "@babel/types" "^7.17.0"
 
-"@babel/runtime@^7.7.6":
+"@babel/runtime@^7.14.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.17.2", "@babel/runtime@^7.7.6":
   version "7.17.9"
   resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
   integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
@@ -277,7 +277,26 @@
   resolved "https://registry.npmmirror.com/@cush/relative/-/relative-1.0.0.tgz#8cd1769bf9bde3bb27dac356b1bc94af40f6cc16"
   integrity sha512-RpfLEtTlyIxeNPGKcokS+p3BZII/Q3bYxryFRglh5H3A3T8q9fsLYm72VYAMEOOIBLEa8o93kFLiBDUWKrwXZA==
 
-"@iconify/types@^1.1.0":
+"@iconify-icons/fa@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmmirror.com/@iconify-icons/fa/-/fa-1.2.2.tgz#3a8dc1bffb7018e15c476581f37f5f174e0331df"
+  integrity sha512-8lecoWNI7X/GRw7B9NPVyGlPrqUxi1w1aZyzAm1s+eiPixmmivxdHtg53tGeSJpYgm/grfSti8EbYoiFTIckrw==
+  dependencies:
+    "@iconify/types" "^1.0.12"
+
+"@iconify-icons/mdi@^1.2.11":
+  version "1.2.11"
+  resolved "https://registry.npmmirror.com/@iconify-icons/mdi/-/mdi-1.2.11.tgz#779889d452f696e50ca25b22e23f5c8a8b548fcb"
+  integrity sha512-FguLqgzaw5gRNIrSYv0gu+6kjxYB9bzWtjXurfbXa+eNc5NFh7W65qehpQy+7cONRpnqSPkILsz/Iko6RtMjwg==
+  dependencies:
+    "@iconify/types" "^1.1.0"
+
+"@iconify/react@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.npmmirror.com/@iconify/react/-/react-3.2.1.tgz#d18da31cec58c1aa8fdf4def451cc7e3196d88de"
+  integrity sha512-yKzixjC9ct9RC/aSGo1OGxkG2rpfhlr/urRz6k2YZlIBzn92PBTlqtSx8o8dFYEorr3eUFSCBZFzBy1yw5jsAA==
+
+"@iconify/types@^1.0.12", "@iconify/types@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmmirror.com/@iconify/types/-/types-1.1.0.tgz#dc15fc988b1b3fd558dd140a24ede7e0aac11280"
   integrity sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==
@@ -664,7 +683,7 @@ chalk@^2.0.0:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chokidar@^3.5.3:
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.npmmirror.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -1034,10 +1053,41 @@ history@^5.2.0:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
+html-escaper@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmmirror.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
+  integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
+
+html-parse-stringify@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmmirror.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz#dfc1017347ce9f77c8141a507f233040c59c55d2"
+  integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
+  dependencies:
+    void-elements "3.1.0"
+
 human-signals@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
+
+i18next-browser-languagedetector@^6.1.4:
+  version "6.1.4"
+  resolved "https://registry.npmmirror.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-6.1.4.tgz#7b087c5edb6f6acd38ef54ede2160ab9cde0108f"
+  integrity sha512-wukWnFeU7rKIWT66VU5i8I+3Zc4wReGcuDK2+kuFhtoxBRGWGdvYI9UQmqNL/yQH1KogWwh+xGEaIPH8V/i2Zg==
+  dependencies:
+    "@babel/runtime" "^7.14.6"
+
+i18next@^21.8.1:
+  version "21.8.1"
+  resolved "https://registry.npmmirror.com/i18next/-/i18next-21.8.1.tgz#44e083ade3dfe08c8099882c560d3c7294cdf679"
+  integrity sha512-uulZBD5kLME7Ucz8pFwpC7jXDjq4BHkio3b6GBw1ykXNHA8rIAk1S2t6zb2Ripf9OMetMkysiDRlPlCVqjvQeg==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
+
+immutable@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmmirror.com/immutable/-/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
+  integrity sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
@@ -1310,6 +1360,15 @@ react-dom@^18.0.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
+react-i18next@^11.16.9:
+  version "11.16.9"
+  resolved "https://registry.npmmirror.com/react-i18next/-/react-i18next-11.16.9.tgz#890cdac0c49120e075d6c520b43dbad3f91bd2df"
+  integrity sha512-euXxWvcEAvsY7ZVkwx9ztCq4butqtsGHEkpkuo0RMj8Ru09IF9o2KxCyN+zyv51Nr0aBh/elaTIiR6fMb8YfVg==
+  dependencies:
+    "@babel/runtime" "^7.14.5"
+    html-escaper "^2.0.2"
+    html-parse-stringify "^3.0.1"
+
 react-refresh@^0.13.0:
   version "0.13.0"
   resolved "https://registry.npmmirror.com/react-refresh/-/react-refresh-0.13.0.tgz#cbd01a4482a177a5da8d44c9755ebb1f26d5a1c1"
@@ -1392,6 +1451,15 @@ safe-buffer@~5.1.1:
   resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
+sass@^1.51.0:
+  version "1.51.0"
+  resolved "https://registry.npmmirror.com/sass/-/sass-1.51.0.tgz#25ea36cf819581fe1fe8329e8c3a4eaaf70d2845"
+  integrity sha512-haGdpTgywJTvHC2b91GSq+clTKGbtkkZmVAb82jZQN/wTy6qs8DdFm2lhEQbEwrY0QDRgSQ3xDurqM977C3noA==
+  dependencies:
+    chokidar ">=3.0.0 <4.0.0"
+    immutable "^4.0.0"
+    source-map-js ">=0.6.2 <2.0.0"
+
 scheduler@^0.22.0:
   version "0.22.0"
   resolved "https://registry.npmmirror.com/scheduler/-/scheduler-0.22.0.tgz#83a5d63594edf074add9a7198b1bae76c3db01b8"
@@ -1435,7 +1503,7 @@ slash@^3.0.0:
   resolved "https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-source-map-js@^1.0.1, source-map-js@^1.0.2:
+"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.1, source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
@@ -1569,6 +1637,11 @@ vite@^2.9.7:
     rollup "^2.59.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+void-elements@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmmirror.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
+  integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
 
 web-streams-polyfill@^3.0.3:
   version "3.2.1"
