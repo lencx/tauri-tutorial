@@ -14,13 +14,16 @@
     "@iconify-icons/mdi": "^1.2.11",
     "@iconify/react": "^3.2.1",
     "@tauri-apps/api": "^1.0.0-rc.5",
+    "clsx": "^1.1.1",
+    "dayjs": "^1.11.2",
     "i18next": "^21.8.1",
     "i18next-browser-languagedetector": "^6.1.4",
     "jotai": "^1.6.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-i18next": "^11.16.9",
-    "react-router-dom": "6"
+    "react-router-dom": "6",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-rc.10",

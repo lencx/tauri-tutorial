@@ -1,30 +1,23 @@
 import { VitePluginConfig } from '@unocss/vite';
-
-const fmtBox = (list: Array<[string, string]>) =>
-  list.map((i) => [new RegExp(`^${i[0]}-(\d+)$`), ([, d]) => ({ [i[1]]: `${+d / 4}rem` })]);
+import presetUno from '@unocss/preset-uno'
+import presetAttributify from '@unocss/preset-attributify';
 
 export default {
   rules: [
-    // ### box ###
-    ...fmtBox([
-      ['m', 'margin'],
-      ['p', 'padding'],
-      ['mb', 'margin-bottom'],
-      ['ml', 'margin-left'],
-      ['mr', 'margin-right'],
-      ['mt', 'margin-top'],
-      ['pb', 'padding-bottom'],
-      ['pl', 'padding-left'],
-      ['pr', 'padding-right'],
-      ['pt', 'padding-top'],
-    ]),
-
     // ### font ###
-    [/^fs-(\d+)$/, ([, d]) => ({ 'font-size': `${+d / 16}em` })],
-    [/^fw-(\d+)$/, ([, d]) => ({ 'font-weight': d })],
-
-    // ### text ###
+    [/^fs-?(\d+)(\w+)?$/, ([, d, w]) => ({ 'font-size': w ? `${d}${w}` : `${+d / 16}em` })],
   ],
   shortcuts: [
-  ]
+    {
+      'hv-center': 'flex items-center justify-center',
+      'omb-hover': 'cursor-pointer select-none',
+    }
+  ],
+  presets: [
+    presetUno(),
+    presetAttributify(),
+  ],
 } as VitePluginConfig;
+
+// const fmtRules = (list: Array<[string, string]>) =>
+//   list.map((i) => [new RegExp(`^${i[0]}-?(\d+)(\w+)?$`), ([, d, w]) => ({ [i[1]]: w ? `${d}${w}` : `${+d / 4}rem` })]);

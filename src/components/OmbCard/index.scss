@@ -1,0 +1,11 @@
+.omb-card {
+  &-group {
+    &-item {
+      transition: 300ms ease;
+      > div {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  }
+}

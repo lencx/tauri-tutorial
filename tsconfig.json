@@ -24,7 +24,8 @@
       "@comps/*": ["./src/components/*"],
       "@sys/*": ["./src/system/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@layouts/*": ["./src/layouts/*"]
     }
   },
   "include": ["src", "locales"],

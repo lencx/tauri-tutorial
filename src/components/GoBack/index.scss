@@ -1,0 +1,13 @@
+.omb-goback {
+  padding: 5px;
+  background-color: #fff;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+
+  &:hover {
+    color: var(--blue);
+    transition: 300ms ease;
+  }
+}

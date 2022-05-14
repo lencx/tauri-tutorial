@@ -1,0 +1,16 @@
+// .omb-canvas-paper {
+//   position: fixed;
+//   height: 100%;
+//   width: 100%;
+//   overflow: hidden;
+// }
+
+.canvas_paper_screen {
+  height: 100vh;
+  overflow: hidden;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -12,8 +12,8 @@ export default function DashboardView() {
   };
 
   return (
-    <div className="flex-vc m-4 ml-0">
-      <Icon className="mr-1" icon={langIcon} fontSize={20} />
+    <div className="flex fs100">
+      <Icon className="mr1" icon={langIcon} fontSize={20} />
       <select value={lang} onChange={handleChange}>
         <option value="en">English</option>
         <option value="zh_CN">中文-简体</option>

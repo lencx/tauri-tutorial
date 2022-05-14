@@ -10,3 +10,13 @@ export const fmtI18n = (...args: any[]) => {
   });
   return [i18nMap, ns] as const;
 }
+
+export const getScrollPosition = (el: any = window) => ({
+  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
+});
+
+export const getScreenSize = () => ({
+  width: document.body.clientWidth,
+  height: document.body.clientHeight,
+});
