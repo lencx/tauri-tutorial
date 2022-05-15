@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# rsw
+.rsw/
+target/
+Cargo.lock

@@ -4,11 +4,11 @@ export default function CanvasView() {
   const go = useNavigate();
 
   const handleGoPaper = () => {
-    go('/canvas/paper');
+    go('/tools/canvas/paper');
   };
 
   return (
-    <div className="omb-canvas-view mt10">
+    <div className="omb-canvas mt10">
       <div className="p10" onClick={handleGoPaper}>
         To Paper
       </div>

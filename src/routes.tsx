@@ -3,7 +3,8 @@ import { useLocation, RouteObject, useRoutes } from 'react-router-dom';
 
 import DashboardView from '@views/dashboard';
 import CanvasView from '@views/canvas';
-import CanvasPaperView from '@/views/canvas/paper';
+import CanvasPaperView from '@views/canvas/paper';
+import GameOfLifeView from '@views/game_of_life';
 
 const routes: RouteObject[] = [
   {
@@ -11,12 +12,16 @@ const routes: RouteObject[] = [
     element: <DashboardView />,
   },
   {
-    path: 'canvas',
+    path: 'tools/canvas',
     element: <CanvasView />,
   },
   {
-    path: 'canvas/paper',
+    path: 'tools/canvas/paper',
     element: <CanvasPaperView />,
+  },
+  {
+    path: 'game/game-of-life',
+    element: <GameOfLifeView />,
   },
 ];
 

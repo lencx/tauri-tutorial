@@ -9,8 +9,10 @@ import common from './common';
 import tip from './tip';
 // views
 import dashboard from './dashboard';
+import tools from './tools';
+import game from './game';
 
-const i18nData = fmtI18n(common, tip, dashboard);
+const i18nData = fmtI18n(common, tip, dashboard, tools, game);
 
 export const resources = i18nData[0];
 
