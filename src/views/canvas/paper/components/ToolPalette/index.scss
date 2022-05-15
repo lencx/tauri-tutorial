@@ -1,0 +1,13 @@
+.tool-palette {
+  position: fixed;
+  top: 20%;
+
+  width: 60px;
+  background-color: #fff;
+  padding: 10px;
+  filter: drop-shadow(0 1px 3px #3C40434D) drop-shadow(0 4px 8px #3C404326);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  // font-size: 0.5rem;
+}

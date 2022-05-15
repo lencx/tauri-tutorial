@@ -10,12 +10,14 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.6.0",
     "@iconify-icons/fa": "^1.2.2",
     "@iconify-icons/mdi": "^1.2.11",
     "@iconify/react": "^3.2.1",
     "@tauri-apps/api": "^1.0.0-rc.5",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.2",
+    "framer-motion": "^6.3.3",
     "i18next": "^21.8.1",
     "i18next-browser-languagedetector": "^6.1.4",
     "jotai": "^1.6.6",

@@ -1,0 +1,16 @@
+.omb-tooltip {
+  background: #2A2A2A;
+  color: #FFF;
+  pointer-events: none;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-size: 14px;
+  // opacity: 0.5;
+
+  &.sys {
+    font-size: 0.5rem;
+    background-color: #989898;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+}
