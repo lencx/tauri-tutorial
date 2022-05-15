@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import 'uno.css';
 
-import '@locales/config';
 import GoBack from '@comps/GoBack';
+import '@locales/config';
 import '@styles/index.scss';
 
 import Routes from './routes';

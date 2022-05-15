@@ -6,8 +6,11 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import { fmtI18n } from '@utils/tools';
 
 import common from './common';
+import tip from './tip';
+// views
+import dashboard from './dashboard';
 
-const i18nData = fmtI18n(common);
+const i18nData = fmtI18n(common, tip, dashboard);
 
 export const resources = i18nData[0];
 

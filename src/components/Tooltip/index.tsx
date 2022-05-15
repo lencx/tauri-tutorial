@@ -81,7 +81,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 };
 
 Tooltip.defaultProps = {
-  placement: 'top',
+  placement: 'bottom',
   sys: false,
 };
 

@@ -27,12 +27,12 @@ export default function CanvasPaperView() {
   }, []);
 
   const handleToolbar = (key: string, val: any) => {
-    const fnMap = {
-      color: 'setColor',
-      lineWidth: 'setLineWidth',
-    };
-    // @ts-ignore
-    InitPaint[fnMap[key]](val);
+    if (key === 'save') {
+      const image = InitPaint.save();
+      console.log(image);
+      return;
+    }
+    InitPaint.run(key, val);
   };
 
   return (

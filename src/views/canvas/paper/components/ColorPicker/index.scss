@@ -1,0 +1,50 @@
+.omb-color-picker {
+  width: 216px;
+
+  .color {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      width: 36px;
+      height: 36px;
+
+      span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: solid 1px #e8eaed;
+        cursor: pointer;
+        user-select: none;
+        transition: 100ms ease;
+      }
+
+      &.checked {
+        span {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+
+  .omb-tabs-head {
+    > div {
+      width: 50%;
+      text-align: center;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 0.75rem;
+      padding: 0;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+
+  .omb-tabs-pane {
+    padding-top: 10px;
+    min-height: 160px;
+  }
+}

@@ -1,0 +1,22 @@
+.omb-tabs {
+  display: inline-block;
+  width: auto;
+  overflow: hidden;
+
+  &-head {
+    > div {
+      display: inline-block;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: 300ms ease;
+
+      &.active {
+        background-color: #eee;
+      }
+    }
+  }
+
+  &-body {
+    background-color: #fff;
+  }
+}

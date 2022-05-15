@@ -1,9 +1,9 @@
+import { useLayoutEffect } from 'react';
 import { useLocation, RouteObject, useRoutes } from 'react-router-dom';
 
 import DashboardView from '@views/dashboard';
 import CanvasView from '@views/canvas';
 import CanvasPaperView from '@/views/canvas/paper';
-import { useLayoutEffect } from 'react';
 
 const routes: RouteObject[] = [
   {
