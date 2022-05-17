@@ -13,11 +13,17 @@ const parseTabList = (children: React.ReactNode) => {
 interface TabsProps {
   className?: string;
   children: React.ReactElement[];
+  onChange?: (tabKey: string, index: number) => void;
 }
 
-const Tabs: React.FC<TabsProps> = ({ className, children }) => {
+const Tabs: React.FC<TabsProps> = ({ className, children, onChange }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabs = useMemo(() => parseTabList(children), []);
+
+  const handleChange = (tabKey: string, index: number) => {
+    setActiveIndex(index);
+    onChange && onChange(tabKey, index);
+  };
 
   return (
     <div className={clsx('omb-tabs', className)}>
@@ -26,7 +32,7 @@ const Tabs: React.FC<TabsProps> = ({ className, children }) => {
           return (
             <div
               key={+idx}
-              onClick={() => setActiveIndex(idx)}
+              onClick={() => handleChange(node.props.tabKey, idx)}
               className={clsx({ active: activeIndex === idx })}
             >
               {node.props.tab}
@@ -40,8 +46,9 @@ const Tabs: React.FC<TabsProps> = ({ className, children }) => {
 };
 
 interface TabPaneProps {
-  tab: string;
-  children: React.ReactNode;
+  tab: React.ReactNode;
+  tabKey: string;
+  children: any;
   className?: string;
 }
 

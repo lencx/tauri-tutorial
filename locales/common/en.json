@@ -2,5 +2,6 @@
   "btn": "button",
   "menu": "menu",
   "palette": "Palette",
-  "custom": "Custom"
+  "custom": "Custom",
+  "recent": "Recent"
 }

@@ -1,18 +1,33 @@
 import { useState } from 'react';
+
 import Popover from '@comps/Popover';
+import type { RGBAObj } from '@utils/color';
+import { fmtRgba } from '@utils/color';
 
 import ColorPicker from '../ColorPicker';
 import './index.scss';
 
-interface ToolbarProps {
+interface ToolPaletteProps {
   onChange: (key: string, value?: any) => void;
 }
 
-const Toolbar: React.FC<ToolbarProps> = ({ onChange }) => {
-  const [color, setColor] = useState('#000');
+const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
+  const [color, setColor] = useState<RGBAObj>({
+    r: 0,
+    g: 0,
+    b: 0,
+    a: 1,
+  });
+
   const handleChange = (key: string, value?: any) => {
     onChange && onChange(key, value);
   };
+
+  const handleColor = (v: RGBAObj) => {
+    setColor(v);
+    handleChange('color', fmtRgba(v));
+  };
+
   return (
     <div className="tool-palette select-none">
       {/* <div onClick={() => handleChange('color', 'red')}>color</div>
@@ -20,19 +35,19 @@ const Toolbar: React.FC<ToolbarProps> = ({ onChange }) => {
       <div onClick={() => handleChange('lineStyle', 'xx')}>style</div>
       <div onClick={() => handleChange('save')}>save</div> */}
       <Popover
-        placement="right"
         className="color-popover"
-        render={({ close }) => (
-          <>
-            <ColorPicker onChange={(val) => setColor(val)} />
-            {/* <button onClick={close}>Submit</button> */}
-          </>
+        placement="right-start"
+        render={() => (
+          <ColorPicker onChange={handleColor} defaultValue={color} />
         )}
       >
-        <div className="color-btn" style={{ backgroundColor: color }} />
+        <button
+          className="color-btn"
+          style={{ backgroundColor: fmtRgba(color) }}
+        />
       </Popover>
     </div>
   );
 };
 
-export default Toolbar;
+export default ToolPalette;

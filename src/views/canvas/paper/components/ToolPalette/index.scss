@@ -26,4 +26,9 @@
   cursor: auto;
   padding: 10px;
   background-color: #fff !important;
+  margin-top: -10px;
+
+  .omb-tabs-pane {
+    transition: 300ms ease;
+  }
 }
