@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Popover from '@comps/Popover';
-import type { RGBAObj } from '@utils/color';
-import { fmtRgba } from '@utils/color';
+import TooltipSlider from '@comps/Slider';
+import { setCSS } from '@utils/color';
+import useI18n from '@hooks/useI18n';
 
+import BrushIcon from '../BrushIcon';
 import ColorPicker from '../ColorPicker';
 import './index.scss';
 
@@ -12,28 +14,42 @@ interface ToolPaletteProps {
 }
 
 const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
-  const [color, setColor] = useState<RGBAObj>({
-    r: 0,
-    g: 0,
-    b: 0,
-    a: 1,
-  });
+  const t = useI18n(['common']);
+  const [color, setColor] = useState('#000000');
+  const [size, setSize] = useState(1);
+  const [opacity, setOpacity] = useState(100);
 
   const handleChange = (key: string, value?: any) => {
     onChange && onChange(key, value);
   };
 
-  const handleColor = (v: RGBAObj) => {
-    setColor(v);
-    handleChange('color', fmtRgba(v));
+  const handleColor = (c: string) => {
+    setColor(c);
+    handleChange('color', c);
+    setCSS('brush-color', c);
   };
 
+  const handleSize = (v: any) => {
+    setSize(v);
+    const brushSize = +((1 / 10) * (v as number)).toFixed(2);
+    setCSS('brush-size', `${Math.PI + brushSize}pt`);
+    handleChange('size', brushSize * 0.75);
+  };
+
+  const handleOpacity = (v: any) => {
+    v = v + 1;
+    setOpacity(v);
+    setCSS('brush-opacity', v / 100);
+    handleChange('opacity', v / 1000);
+  };
+
+  useEffect(() => {
+    setCSS('brush-color', '#000000');
+    handleSize(1);
+  }, []);
+
   return (
-    <div className="tool-palette select-none">
-      {/* <div onClick={() => handleChange('color', 'red')}>color</div>
-      <div onClick={() => handleChange('lineWidth', 5)}>width</div>
-      <div onClick={() => handleChange('lineStyle', 'xx')}>style</div>
-      <div onClick={() => handleChange('save')}>save</div> */}
+    <div className="tool-palette select-none flex-col">
       <Popover
         className="color-popover"
         placement="right-start"
@@ -41,10 +57,51 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
           <ColorPicker onChange={handleColor} defaultValue={color} />
         )}
       >
-        <button
-          className="color-btn"
-          style={{ backgroundColor: fmtRgba(color) }}
-        />
+        <button className="color-btn" style={{ backgroundColor: color }} />
+      </Popover>
+      <Popover
+        className="brush-popover"
+        placement="right-start"
+        render={() => (
+          <div className="flex items-center">
+            <div>
+              <div>
+                <div className="brush-info">{t('common:size')}</div>
+                <TooltipSlider
+                  style={{ width: 150 }}
+                  max={100}
+                  tipFormatter={(v) => v}
+                  onChange={handleSize}
+                  value={size}
+                />
+              </div>
+              <div>
+                <div className="brush-info">{t('common:opacity')}</div>
+                <TooltipSlider
+                  style={{ width: 150 }}
+                  max={100}
+                  tipFormatter={(v) => v}
+                  onChange={handleOpacity}
+                  value={opacity}
+                />
+              </div>
+            </div>
+            <div className="preview hv-center">
+              <span
+                style={{
+                  width: `var(--omb-brush-size)`,
+                  height: `var(--omb-brush-size)`,
+                  backgroundColor: `var(--omb-brush-color)`,
+                  opacity: `var(--omb-brush-opacity)`,
+                }}
+              />
+            </div>
+          </div>
+        )}
+      >
+        <button className="brush-btn">
+          <BrushIcon />
+        </button>
       </Popover>
     </div>
   );

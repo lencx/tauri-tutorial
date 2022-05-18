@@ -1,6 +1,6 @@
 .tool-palette {
   display: flex;
-  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 20%;
   width: 60px;
@@ -19,16 +19,61 @@
     cursor: pointer;
     transition: 300ms ease;
   }
+
+  .brush-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: unset;
+    cursor: pointer;
+  }
 }
 
 .color-popover {
-  margin-left: 20px;
   cursor: auto;
   padding: 10px;
-  background-color: #fff !important;
   margin-top: -10px;
+  margin-left: 20px;
+  background-color: #fff !important;
 
   .omb-tabs-pane {
     transition: 300ms ease;
+  }
+}
+
+.brush-popover {
+  padding: 10px 20px;
+  margin-left: 20px;
+
+  .brush-info {
+    font-size: 1rem;
+    font-weight: bold;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .preview {
+    --square-color: #cccccc;
+    width: 60px;
+    height: 60px;
+    margin-left: 30px;
+    background-image: linear-gradient(45deg,
+        var(--square-color) 26%, transparent 25%, transparent 75%,
+        var(--square-color) 75%,
+        var(--square-color)
+      ),
+      linear-gradient(45deg,
+        var(--square-color) 26%, transparent 25%, transparent 75%,
+        var(--square-color) 75%,
+        var(--square-color)
+      );
+    background-position: 0 0, 6px 6px;
+    background-size: 12px 12px;
+
+    span {
+      display: inline-block;
+      border-radius: 50%;
+    }
   }
 }

@@ -3,5 +3,7 @@
   "menu": "menu",
   "palette": "Palette",
   "custom": "Custom",
-  "recent": "Recent"
+  "recent": "Recent",
+  "size": "Size",
+  "opacity": "Opacity"
 }

@@ -24,3 +24,7 @@ export const rgba2obj = (c: string) => {
   const a = c.match(/rgba\((.*)\)/)?.[1]?.split(',');
   return { r: Number(a?.[0]), g: Number(a?.[1]), b: Number(a?.[2]), a: Number(a?.[3]) };
 }
+
+export const setCSS = (key: string, val: any) => {
+  document.body.style.setProperty(`--omb-${key}`, val);
+}

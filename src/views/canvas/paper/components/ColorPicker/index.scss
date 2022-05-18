@@ -71,16 +71,35 @@
   }
 
   .color-picker-pane {
-    height: 236px;
+    height: 250px;
 
     .omb-colorpicker {
       width: 216px;
     }
 
-    .color-text {
+    .color-input {
       font-weight: bold;
       font-size: 0.75rem;
-      margin-top: 10px;
+      margin-top: 15px;
+
+      i {
+        color: #999;
+        margin-left: 10px;
+        font-size: 1rem;
+        vertical-align: -1px;
+      }
+
+      input {
+        border: none;
+        border-bottom: solid 2px #d8d8d8;
+        width: 100px;
+        font-weight: bold;
+        padding-left: 2px;
+
+        &:focus {
+          outline: none;
+        }
+      }
     }
   }
 }

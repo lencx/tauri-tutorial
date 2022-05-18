@@ -3,5 +3,7 @@
   "menu": "菜單",
   "palette": "調色板",
   "custom": "自定義",
-  "recent": "最近的"
+  "recent": "最近的",
+  "size": "尺寸",
+  "opacity": "透明度"
 }

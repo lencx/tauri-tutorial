@@ -23,6 +23,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "jotai": "^1.6.6",
     "lodash": "^4.17.21",
+    "rc-slider": "^10.0.0",
     "react": "^18.0.0",
     "react-colorful": "^5.5.1",
     "react-dom": "^18.0.0",

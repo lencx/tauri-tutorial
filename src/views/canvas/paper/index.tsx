@@ -27,7 +27,7 @@ export default function CanvasPaperView() {
   return (
     <div className="omb-canvas-paper">
       <Toolbar onChange={handleToolbar} />
-      <canvas ref={canvasRef} />
+      <canvas ref={canvasRef} className="select-none" />
     </div>
   );
 }

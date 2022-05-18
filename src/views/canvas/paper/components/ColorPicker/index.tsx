@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import { RgbaColorPicker } from 'react-colorful';
-import includes from 'lodash/includes';
+import { HexColorPicker, HexColorInput } from 'react-colorful';
 
+import Tabs from '@comps/Tabs';
 import Tooltip from '@comps/Tooltip';
 import useI18n from '@hooks/useI18n';
 import useLocalColor from '@hooks/useLocalColor';
-import { rgb2hex, hex2rgba, fmtRgba, rgba2obj } from '@utils/color';
-import type { RGBAObj } from '@utils/color';
-import Tabs from '@comps/Tabs';
 import './index.scss';
 
 const { TabPane } = Tabs;
@@ -41,8 +38,8 @@ const COLOR_LIST = [
 ];
 
 interface ColorPickerProps {
-  onChange?: (color: RGBAObj) => void;
-  defaultValue?: RGBAObj;
+  onChange?: (color: string) => void;
+  defaultValue?: string;
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({
@@ -56,34 +53,31 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   const [color, setColor] = useState(defaultValue);
 
   const handleColor = (c: string, index: number) => {
-    const cObj = hex2rgba(c);
     setActiveIndex(index);
-    setColor(cObj);
-    onChange && onChange(cObj);
+    setColor(c);
+    onChange && onChange(c);
   };
 
-  const handleRecentColor = (c: string, index: number) => {
-    const cObj = rgba2obj(c);
-    setActiveIndex(index);
-    setColor(cObj);
-    onChange && onChange(cObj);
+  const handleCustom = (c: string) => {
+    setColor(c);
+    onChange && onChange(c);
   };
 
-  const handleCustom = (cObj: any) => {
-    setColor(cObj);
-    onChange && onChange(cObj);
-  };
-
-  const handleSetColor = (c: RGBAObj) => {
-    const _color = rgb2hex(c.r, c.g, c.b);
-    if (c.a === 1) {
-      const idx = COLOR_LIST.findIndex((i) => i === _color);
+  const handleSetColor = (c: string, type?: string) => {
+    const idx = COLOR_LIST.findIndex((i) => i === c);
+    if (idx !== -1) {
       setActiveIndex(idx);
+      return;
     }
-    if (c.a !== 1 || !includes(COLOR_LIST, _color)) {
-      setActiveIndex(24);
-      setLocalColors(fmtRgba(c));
+
+    if (type === 'init') {
+      const localIdx = localColors.findIndex((i) => i === c);
+      setActiveIndex(24 + localIdx);
+      return;
     }
+
+    setActiveIndex(24);
+    setLocalColors(c);
   };
 
   const handleTabs = (tab: string) => {
@@ -94,26 +88,9 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
   };
 
   useEffect(() => {
-    let hasIndx = false;
-    if (defaultValue?.a === 1) {
-      const _color = rgb2hex(defaultValue.r, defaultValue.g, defaultValue.b);
-      const idx = COLOR_LIST.findIndex((i) => i === _color);
-      if (idx !== -1) {
-        setActiveIndex(idx);
-        hasIndx = true;
-      }
-    }
-    if (!hasIndx) {
-      const _color = fmtRgba(defaultValue as RGBAObj);
-      const idx = localColors.findIndex((i) => i === _color);
-      if (idx !== -1) {
-        setActiveIndex(24 + idx);
-      } else {
-        setActiveIndex(24);
-        setLocalColors(fmtRgba(defaultValue as RGBAObj));
-      }
-    }
-  }, []);
+    if (!defaultValue) return;
+    handleSetColor(defaultValue, 'init');
+  }, [defaultValue]);
 
   return (
     <Tabs className="omb-color-picker" onChange={handleTabs}>
@@ -151,7 +128,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
                     className={clsx('color-item hv-center', {
                       checked: _idx === activeIndex,
                     })}
-                    onClick={() => handleRecentColor(i, _idx)}
+                    onClick={() => handleColor(i, _idx)}
                   >
                     <span style={{ backgroundColor: i }} />
                   </div>
@@ -166,13 +143,14 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
         tab={t('common:custom')}
         tabKey="custom"
       >
-        <RgbaColorPicker
+        <HexColorPicker
           className="omb-colorpicker"
           color={color}
           onChange={handleCustom}
         />
-        <div className="color-text">
-          {fmtRgba(color as RGBAObj)?.toLocaleUpperCase()}
+        <div className="color-input">
+          <span>HEX</span> <i>#</i>
+          <HexColorInput color={color} onChange={handleCustom} />
         </div>
       </TabPane>
     </Tabs>
