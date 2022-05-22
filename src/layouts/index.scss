@@ -1,0 +1,35 @@
+.omb-layout {
+  height: 100vh;
+
+  &-sider {
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    top: 0;
+    box-shadow: 0 0 3px rgba(46, 41, 51, 0.8);
+    overflow-y: scroll;
+
+    .sider-head {
+      position: fixed;
+      display: flex;
+      height: 50px;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .sider-body {
+      padding-top: 50px;
+      height: 100%;
+      div {
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-body {
+    margin-left: 300px;
+    padding: 20px;
+    display: flex;
+  }
+}

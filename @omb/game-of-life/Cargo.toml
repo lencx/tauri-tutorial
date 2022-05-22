@@ -8,6 +8,9 @@ edition = "2018"
 [lib]
 crate-type = ["cdylib", "rlib"]
 
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = true
+
 [dependencies]
 wasm-bindgen = "0.2.71"
 fixedbitset = "0.4.0"

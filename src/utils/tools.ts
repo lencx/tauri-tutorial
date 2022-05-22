@@ -1,3 +1,6 @@
+
+import dayjs from 'dayjs';
+
 export const fmtI18n = (...args: any[]) => {
   const i18nMap: Record<string, any> = {};
   const ns: string[] = [];
@@ -20,3 +23,5 @@ export const getScreenSize = () => ({
   width: document.body.clientWidth,
   height: document.body.clientHeight,
 });
+
+export const fmtDate = (date: Date) => dayjs(date).format('YYYY/MM/DD');

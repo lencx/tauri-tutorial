@@ -1,10 +1,16 @@
 .omb-goback {
-  padding: 5px;
   background-color: #fff;
   font-size: 1.2rem;
-  position: fixed;
-  top: 5px;
-  left: 5px;
+  width: 30px;
+  height: 30px;
+
+  &.fixed {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 99;
+    box-shadow: 0 0 4px rgba(46, 41, 51, 0.2);
+  }
 
   &:hover {
     color: var(--blue);

@@ -25,9 +25,10 @@
       "@sys/*": ["./src/system/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@styles/*": ["./src/styles/*"],
-      "@layouts/*": ["./src/layouts/*"]
+      "@layouts/*": ["./src/layouts/*"],
+      "@plugins/*": ["./plugins/*"]
     }
   },
-  "include": ["src", "locales"],
+  "include": ["src", "locales", "plugins"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

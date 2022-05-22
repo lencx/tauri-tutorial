@@ -1,32 +1,37 @@
 import { useEffect, useRef } from 'react';
 
+import GoBack from '@comps/GoBack';
 import useFullCanvas from '@hooks/useFullCanvas';
-import { Paint } from './canvas';
-import Toolbar from './components/ToolPalette';
+import { Brush } from './canvas';
+import ToolPalette from './components/ToolPalette';
 import './index.scss';
 
-const InitPaint = new Paint();
+const InitBrush = new Brush();
 
 export default function CanvasPaperView() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useFullCanvas(canvasRef);
 
   useEffect(() => {
-    canvasRef.current && InitPaint.init(canvasRef.current);
+    canvasRef.current && InitBrush.init(canvasRef.current);
   }, []);
 
   const handleToolbar = (key: string, val: any) => {
     if (key === 'save') {
-      const image = InitPaint.save();
+      const image = InitBrush.save();
       console.log(image);
       return;
     }
-    InitPaint.run(key, val);
+    if (key === 'eraser') {
+      InitBrush.eraser();
+    }
+    InitBrush.run(key, val);
   };
 
   return (
     <div className="omb-canvas-paper">
-      <Toolbar onChange={handleToolbar} />
+      <GoBack />
+      <ToolPalette onChange={handleToolbar} />
       <canvas ref={canvasRef} className="select-none" />
     </div>
   );

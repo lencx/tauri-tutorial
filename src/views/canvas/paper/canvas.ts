@@ -3,7 +3,7 @@ type PaintOptions = {
   size: number;
 }
 
-export class Paint {
+export class Brush {
   ctx: CanvasRenderingContext2D | null = null;
   canvas: HTMLCanvasElement | null = null;
   currentPoint: any;
@@ -38,7 +38,17 @@ export class Paint {
   }
 
   save = () => {
+    // this.canvas?.toBlob();
     return this.canvas?.toDataURL();
+  }
+
+  clear = () => {
+    this.ctx?.clearRect(0, 0, this.canvas?.width || 0, this.canvas?.height || 0);
+  }
+
+  eraser = () => {
+    if (!this.ctx) return;
+    this.ctx.globalCompositeOperation = 'destination-out';
   }
 
   run = (method: string, value: any) => {

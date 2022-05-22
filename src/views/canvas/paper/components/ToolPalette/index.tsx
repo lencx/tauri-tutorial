@@ -6,6 +6,7 @@ import { setCSS } from '@utils/color';
 import useI18n from '@hooks/useI18n';
 
 import BrushIcon from '../BrushIcon';
+import EraserIcon from '../EraserIcon';
 import ColorPicker from '../ColorPicker';
 import './index.scss';
 
@@ -103,6 +104,10 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
           <BrushIcon />
         </button>
       </Popover>
+      <div className="omb-tool-line" />
+      <div className="eraser-btn" onClick={() => handleChange('eraser')}>
+        <EraserIcon />
+      </div>
     </div>
   );
 };

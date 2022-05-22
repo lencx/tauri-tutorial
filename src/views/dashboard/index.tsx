@@ -14,33 +14,13 @@ export default function DashboardView() {
         <img width={160} src={ohmyboxIcon} alt="logo" />
       </div>
       <OmbCard title={t('dashboard:tools')}>
-        <OmbItem name={t('tools:canvas')} to="/tools/canvas" />
-        {/* <OmbItem name="Color" /> */}
+        <OmbItem to="/tools/canvas">{t('tools:canvas')}</OmbItem>
       </OmbCard>
       <OmbCard title={t('dashboard:game')}>
-        <OmbItem name={t('game:game-of-life')} to="/game/game-of-life" />
-        {/* <OmbItem name="Game" />
-        <OmbItem name="Game" />
-        <OmbItem name="Game" />
-        <OmbItem name="Game" />
-        <OmbItem name="Game" /> */}
+        <OmbItem to="/game/game-of-life">{t('game:game-of-life')}</OmbItem>
       </OmbCard>
-      {/* <OmbCard title={t('dashboard:video')}>
-        <OmbItem name="Video" />
-        <OmbItem name="Video" />
-        <OmbItem name="Video" />
-        <OmbItem name="Video" />
-        <OmbItem name="Video" />
-        <OmbItem name="Video" />
-      </OmbCard>
-      <OmbCard title={t('dashboard:other')}>
-        <OmbItem name="Other" />
-        <OmbItem name="Other" />
-        <OmbItem name="Other" />
-        <OmbItem name="Other" />
-        <OmbItem name="Other" />
-        <OmbItem name="Other" />
-      </OmbCard> */}
+      {/* <OmbCard title={t('dashboard:video')}></OmbCard>
+      <OmbCard title={t('dashboard:other')}></OmbCard> */}
     </div>
   );
 }

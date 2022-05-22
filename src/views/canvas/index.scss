@@ -1,0 +1,40 @@
+.omb-layout {
+  height: 100vh;
+
+  &-sider {
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    top: 0;
+    box-shadow: 4px 0 10px rgba(46, 41, 51, 0.08);
+    overflow-y: scroll;
+
+    .head {
+      height: 50px;
+    }
+
+    .group {
+      &-item {
+        display: flex;
+        align-items: center;
+        transition: 300ms ease;
+        color: #666;
+
+        .ico {
+          margin-right: 10px;
+        }
+
+        &.active {
+          background-color: rgba(51, 181, 204, 0.3);
+          color: #2a2a2a;
+        }
+      }
+    }
+  }
+
+  &-body {
+    margin-left: 300px;
+    padding: 20px;
+    display: flex;
+  }
+}

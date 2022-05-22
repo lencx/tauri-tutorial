@@ -12,7 +12,10 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": true,
+      "fs": {
+        "scope": ["$HOME/.omb/*"]
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +32,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.lencx.omb",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -55,11 +58,11 @@
     },
     "windows": [
       {
-        "fullscreen": false,
+        "width": 800,
         "height": 600,
         "resizable": true,
-        "title": "Oh My Box",
-        "width": 800
+        "fullscreen": false,
+        "title": "Oh My Box"
       }
     ]
   }

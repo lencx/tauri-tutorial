@@ -27,6 +27,17 @@
     background: unset;
     cursor: pointer;
   }
+
+  .omb-tool-line {
+    width: 30px;
+    height: 2px;
+    background-color: #dbdbdb;
+    margin: 10px 0;
+  }
+
+  .eraser-btn {
+    width: 100px;
+  }
 }
 
 .color-popover {
