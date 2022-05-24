@@ -5,7 +5,7 @@
   "author": "lencx <cxin1314@gmail.com>",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && rsw build && vite build",
+    "build": "rsw build && tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
     "rsw": "rsw"
