@@ -30,7 +30,7 @@
     "react-i18next": "^11.16.9",
     "react-router-dom": "6",
     "uuid": "^8.3.2",
-    "vite-plugin-rsw": "^2.0.5"
+    "vite-plugin-rsw": "^2.0.6"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-rc.10",

@@ -419,10 +419,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@rsw/cli@^0.7.9":
-  version "0.7.10"
-  resolved "https://registry.npmmirror.com/@rsw/cli/-/cli-0.7.10.tgz#f02df8fbccadc20b3f23bb3f3da85813bcd57a96"
-  integrity sha512-qgXk9HWTeb3E5FtI9Vjq/QQsfmGYF6KTcESBZSPUDbp3/ErrvunKPMxtkPERjCi3Nrd1+V5q6RKAyHcf/V5VlQ==
+"@rsw/cli@^0.7.11":
+  version "0.7.11"
+  resolved "https://registry.npmmirror.com/@rsw/cli/-/cli-0.7.11.tgz#4d88131b48fe2e90bc0942568b34f9de57de0738"
+  integrity sha512-aTSnAOarn363yqZKrMif0a+VgJtmp/VNAXbYMriVu2aRqKm7DlxOTcQm4mE4b5VruAEDqU5EfgMG+J2eR9+M8A==
   dependencies:
     axios "^0.27.2"
     console.table "^0.10.0"
@@ -2042,12 +2042,12 @@ uuid@^8.3.2:
   resolved "https://registry.npmmirror.com/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-vite-plugin-rsw@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.npmmirror.com/vite-plugin-rsw/-/vite-plugin-rsw-2.0.5.tgz#120c5ea1332f1a15daad9f38b03adf139ba7460f"
-  integrity sha512-+98ZyUKXF0/D36E3ElVBp1CDhg4A6lghLan+06mSbpgdYzAfUIRX+w4nNMx1xjkIS3nAyO8LLLoCWT1CXjaNWQ==
+vite-plugin-rsw@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npmmirror.com/vite-plugin-rsw/-/vite-plugin-rsw-2.0.6.tgz#9000b89a0ea8b8d8cb9d8a3cf6e4392cdba9d708"
+  integrity sha512-tqsjkAzZZPfjhW2eaHYdZZkL8MB1VWI776IfOUUkjSazQdKWnuPngQNz0130WG7+03uoPV7sRshVFSlvTivSbw==
   dependencies:
-    "@rsw/cli" "^0.7.9"
+    "@rsw/cli" "^0.7.11"
 
 vite-tsconfig-paths@^3.4.1:
   version "3.4.1"
