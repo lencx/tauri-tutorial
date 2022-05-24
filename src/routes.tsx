@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react';
-import { useLocation, RouteObject, useRoutes } from 'react-router-dom';
+import { useLocation, useRoutes } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom';
 
 import DashboardView from '@views/dashboard';
 import CanvasView from '@views/canvas';

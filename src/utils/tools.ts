@@ -1,4 +1,3 @@
-
 import dayjs from 'dayjs';
 
 export const fmtI18n = (...args: any[]) => {

@@ -1,4 +1,3 @@
-
 export type RGBAObj = { r: number; g: number; b: number; a: number };
 
 export const hex2rgba = (hex: any, a = 1) => {
