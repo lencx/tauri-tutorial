@@ -10,8 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # platform: [macos-latest, ubuntu-latest, windows-latest]
-        platform: [macos-latest, ubuntu-latest]
+        platform: [macos-latest, ubuntu-latest, windows-latest]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -37,7 +36,7 @@ jobs:
           version: latest
 
       # Install rsw
-      - name: install rsw
+      - name: Install rsw
         run: cargo install rsw
 
       # Cache
@@ -55,8 +54,8 @@ jobs:
             ${{ runner.os }}-yarn-
 
       # Install & Build
-      - name: install app dependencies and build it
-        run: yarn && yarn build
+      - name: Install app dependencies and build it
+        run: yarn && yarn tauri build
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
