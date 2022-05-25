@@ -5,7 +5,33 @@ on:
       - release
 
 jobs:
-  publish-tauri:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: get version
+        run: echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_ENV
+      - name: create release
+        id: create_release
+        uses: actions/create-release@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          release_name: 'OhMyBox v${{ env.PACKAGE_VERSION }}'
+          body: 'See the assets to download this version and install.'
+          draft: true
+          prerelease: false
+
+  build-tauri:
+    needs: create-release
     strategy:
       fail-fast: false
       matrix:
@@ -40,5 +66,6 @@ jobs:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
           releaseName: 'OhMyBox v__VERSION__'
           releaseBody: 'See the assets to download this version and install.'
+          releaseId: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
           releaseDraft: true
           prerelease: false
