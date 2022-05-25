@@ -2,8 +2,8 @@ name: Release CI
 
 on:
   push:
-    branches:
-      - release
+    tags:
+      - 'v*'
 
 jobs:
   publish-tauri:
@@ -35,6 +35,10 @@ jobs:
         with:
           # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
           version: latest
+
+      # Install rsw
+      - name: install rsw
+        run: cargo install rsw
 
       # Cache
       - name: Get yarn cache directory path
