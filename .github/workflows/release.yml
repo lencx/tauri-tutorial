@@ -2,11 +2,37 @@ name: Release CI
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - release
 
 jobs:
-  publish-tauri:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      RELEASE_UPLOAD_ID: ${{ steps.create_release.outputs.id }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Get version
+        run: echo "PACKAGE_VERSION=$(node -p "require('./src-tauri/tauri.conf.json').package.version")" >> $GITHUB_ENV
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          release_name: 'OhMyBox v${{ env.PACKAGE_VERSION }}'
+          body: 'See the assets to download this version and install.'
+          draft: true
+          prerelease: false
+
+  build-tauri:
+    needs: create-release
     strategy:
       fail-fast: false
       matrix:
@@ -33,7 +59,7 @@ jobs:
       - uses: jetli/wasm-pack-action@v0.3.0
         with:
           # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
-          version: latest
+          version: v0.9.1
 
       # Install rsw
       - name: Install rsw
@@ -55,13 +81,9 @@ jobs:
 
       # Install & Build
       - name: Install app dependencies and build it
-        run: yarn && yarn tauri build
+        run: yarn && yarn build
       - uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: 'OhMyBox v__VERSION__'
-          releaseBody: 'See the assets to download this version and install.'
-          releaseDraft: true
-          prerelease: false
+          releaseId: ${{ needs.create-release.outputs.RELEASE_UPLOAD_ID }}
