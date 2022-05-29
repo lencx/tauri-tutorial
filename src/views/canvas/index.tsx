@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import { Icon } from '@iconify/react/offline';
-import folderIcon from '@iconify-icons/mdi/folder-outline';
-import folderOpenIcon from '@iconify-icons/mdi/folder-open-outline';
+import folderIcon from '@iconify-icons/mdi/folder';
+import folderOpenIcon from '@iconify-icons/mdi/folder-open';
 
 import Layout from '@layouts/index';
 import InputText from '@comps/InputText';
 import OmbCard, { OmbItem } from '@comps/OmbCard';
 
 import AddDirButton from './components/AddDirButton';
+import DeleteButton from './components/DeleteButton';
 import { useCanvas } from './fs';
 
 import './index.scss';
@@ -22,15 +23,11 @@ export default function CanvasView() {
     addDir,
     removeDir,
     addFile,
+    removeFile,
   } = useCanvas();
 
-  const handleRename = (oldName: string, newName: string, index: number) => {
+  const handleRename = (oldName: string, newName: string) => {
     renameDir(oldName, newName);
-  };
-
-  const handleRemove = (e: React.FormEvent<EventTarget>, name: string) => {
-    e.stopPropagation();
-    removeDir(name);
   };
 
   const handleAddPaper = () => {
@@ -49,19 +46,22 @@ export default function CanvasView() {
             const active = tocIndex === idx;
             return (
               <div
-                key={`${i.uid}_${idx}`}
+                key={i.name}
                 onClick={() => setToc(idx)}
                 className={clsx('group-item', { active })}
               >
-                <Icon
-                  className="ico"
-                  icon={active ? folderOpenIcon : folderIcon}
-                />
-                <InputText
-                  defaultValue={i.name}
-                  onChange={(v) => handleRename(i.name, v, idx)}
-                />
-                <button onClick={(e) => handleRemove(e, i.name)}>-</button>
+                <div className="group-item-name">
+                  <Icon
+                    className="ico"
+                    icon={active ? folderOpenIcon : folderIcon}
+                    color="var(--brown)"
+                  />
+                  <InputText
+                    defaultValue={i.name}
+                    onChange={(v) => handleRename(i.name, v)}
+                  />
+                </div>
+                <DeleteButton onClick={() => removeDir(i.name)} />
               </div>
             );
           })}
@@ -78,9 +78,10 @@ export default function CanvasView() {
               <OmbItem
                 key={paper.path}
                 className="paper"
-                to="/tools/canvas/paper"
+                to={`/tools/canvas/paper/${paper.name}`}
               >
                 {paper.name}
+                <DeleteButton onClick={() => removeFile(paper.name)} />
               </OmbItem>
             );
           })}

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 
 import GoBack from '@comps/GoBack';
 import useFullCanvas from '@hooks/useFullCanvas';
@@ -8,9 +9,10 @@ import './index.scss';
 
 const InitBrush = new Brush();
 
-export default function CanvasPaperView() {
+export default function CanvasPaperView(props: any) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useFullCanvas(canvasRef);
+  const { file } = useParams();
 
   useEffect(() => {
     canvasRef.current && InitBrush.init(canvasRef.current);

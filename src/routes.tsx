@@ -17,7 +17,7 @@ const routes: RouteObject[] = [
     element: <CanvasView />,
   },
   {
-    path: 'tools/canvas/paper',
+    path: 'tools/canvas/paper/:file',
     element: <CanvasPaperView />,
   },
   {

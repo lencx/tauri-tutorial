@@ -13,3 +13,17 @@
 .shadow-dialog {
   box-shadow: 0 4px 16px rgba(46, 41, 51, 0.08), 0 8px 24px rgba(71, 63, 79, 0.16);
 }
+
+.omb-ico {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: transform .3s ease-in-out;
+  will-change: transform;
+}

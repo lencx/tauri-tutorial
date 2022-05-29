@@ -1,0 +1,23 @@
+.omb-input-text {
+  cursor: text;
+  border: dashed 1px transparent;
+  height: 20px;
+
+  &:hover {
+    border: dashed 1px #000;
+  }
+
+  .text {
+    display: inline-block;
+    width: 100%;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+}

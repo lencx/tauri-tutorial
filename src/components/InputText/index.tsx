@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import './index.scss';
+
 interface InputTextProps {
   isEdit?: boolean;
   defaultValue?: string;
@@ -45,17 +47,24 @@ const InputText: React.FC<InputTextProps> = ({
     }
   };
 
-  return editing ? (
-    <input
-      value={val}
-      type="text"
-      autoFocus
-      onChange={handleChange}
-      onBlur={handleSave}
-      onKeyDown={handleKeyDown}
-    />
-  ) : (
-    <span onDoubleClick={handleEdit}>{val}</span>
+  return (
+    <span className="omb-input-text">
+      {editing ? (
+        <input
+          value={val}
+          type="text"
+          autoFocus
+          className="text"
+          onChange={handleChange}
+          onBlur={handleSave}
+          onKeyDown={handleKeyDown}
+        />
+      ) : (
+        <span className="text" onDoubleClick={handleEdit}>
+          {val}
+        </span>
+      )}
+    </span>
   );
 };
 

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { message } from '@tauri-apps/api/dialog';
+import { Icon } from '@iconify/react/offline';
+import folderPlusIcon from '@iconify-icons/mdi/folder-plus';
 
 import { ignoreFile } from '@utils/tools';
 import useI18n from '@hooks/useI18n';
@@ -40,7 +42,7 @@ const AddDirButton: React.FC<AddDirButtonProps> = ({ onAdd }) => {
 
   return (
     <div>
-      <button onClick={handleAdd}>+</button>
+      <Icon onClick={handleAdd} icon={folderPlusIcon} fontSize="24" />
       {addEditing && (
         <div>
           <input

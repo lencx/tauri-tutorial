@@ -4,6 +4,7 @@ import {
   BaseDirectory,
   readDir, createDir, renameFile,
   removeDir as TauriRemoveDir,
+  removeFile as TauriRemoveFile,
   writeFile,
 } from "@tauri-apps/api/fs";
 import { homeDir } from "@tauri-apps/api/path";
@@ -30,6 +31,33 @@ export const useCanvas = () => {
   const [tocTree, setTocTree] = useState<FileEntryInfo[]>([]);
   const [tocPane, setTocPane] = useState<TocPaneInfo>();
   const [tocIndex, setTocIndex] = useState(0);
+
+  const init = useCallback(async () => {
+    const dirPath = await root();
+    const group: FileEntryInfo[] = [];
+    await readDir(dirPath)
+      .then((_dirs) => {
+        _dirs = _dirs.filter(i => i.name && !ignoreFile(i.name));
+        _dirs.forEach(async (i, idx) => {
+          if (!i.name) return;
+
+          const info = await metadata(i.path);
+          const data: FileEntryInfo = { name: i.name, path: i.path, ...info };
+          group.push(data);
+
+          if (idx === _dirs.length - 1) {
+            group.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1);
+            setTocTree(group);
+            setToc(0, group);
+          }
+        });
+      })
+      .catch((err) => message(err));
+  }, [])
+
+  useEffect(() => {
+    init();
+  }, []);
 
   const root = async () => {
     const _root = await homeDir();
@@ -63,33 +91,6 @@ export const useCanvas = () => {
       })
     }
   };
-
-  const init = useCallback(async () => {
-    const dirPath = await root();
-    const group: FileEntryInfo[] = [];
-    await readDir(dirPath)
-      .then((_dirs) => {
-        _dirs = _dirs.filter(i => i.name && !ignoreFile(i.name));
-        _dirs.forEach(async (i, idx) => {
-          if (!i.name) return;
-
-          const info = await metadata(i.path);
-          const data: FileEntryInfo = { name: i.name, path: i.path, ...info };
-          group.push(data);
-
-          if (idx === _dirs.length - 1) {
-            group.sort((a, b) => a.createdAt < b.createdAt ? 1 : -1);
-            setTocTree(group);
-            setToc(0, group);
-          }
-        });
-      })
-      .catch((err) => message(err));
-  }, [])
-
-  useEffect(() => {
-    init();
-  }, []);
 
   const renameDir = async (oldPath: string, newPath: string) => {
     const dirPath = await root();
@@ -154,5 +155,18 @@ export const useCanvas = () => {
     }
   }
 
-  return { tocTree, tocIndex, tocPane, setToc, renameDir, addDir, removeDir, addFile };
+  const removeFile = async (file: string) => {
+    const filePath = `${tocPane?.path}/${file}`;
+    await TauriRemoveFile(filePath, {
+      dir: BaseDirectory.Home,
+    });
+    if (tocPane) {
+      const _tocPane = { ...tocPane };
+      _tocPane.children = tocPane?.children.filter(i => i.name !== file);
+      setTocPane(_tocPane);
+    }
+    // setToc(tocIndex,);
+  };
+
+  return { tocTree, tocIndex, tocPane, setToc, renameDir, addDir, removeDir, addFile, removeFile };
 }
