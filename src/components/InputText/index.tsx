@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface InputTextProps {
   isEdit?: boolean;
@@ -27,8 +27,11 @@ const InputText: React.FC<InputTextProps> = ({
   };
 
   const handleSave = () => {
-    if (!val) return;
     setEdit(false);
+    if (!val) {
+      setValue(defaultValue);
+      return;
+    }
     onChange && onChange(val);
   };
 
@@ -46,6 +49,7 @@ const InputText: React.FC<InputTextProps> = ({
     <input
       value={val}
       type="text"
+      autoFocus
       onChange={handleChange}
       onBlur={handleSave}
       onKeyDown={handleKeyDown}

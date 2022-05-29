@@ -10,7 +10,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ title, sider, children }) => {
   return (
-    <div className="omb-layout omb-canvas">
+    <div className="omb-layout">
       <div className="omb-layout-sider">
         <div className="sider-head">
           <GoBack float={false} />

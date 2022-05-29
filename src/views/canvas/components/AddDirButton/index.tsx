@@ -1,10 +1,15 @@
 import { useState } from 'react';
+import { message } from '@tauri-apps/api/dialog';
+
+import { ignoreFile } from '@utils/tools';
+import useI18n from '@hooks/useI18n';
 
 interface AddDirButtonProps {
   onAdd: (name: string) => Promise<void>;
 }
 
 const AddDirButton: React.FC<AddDirButtonProps> = ({ onAdd }) => {
+  const t = useI18n(['rules']);
   const [addEditing, setAddEdit] = useState(false);
   const [addValue, setAddValue] = useState('');
 
@@ -17,6 +22,10 @@ const AddDirButton: React.FC<AddDirButtonProps> = ({ onAdd }) => {
   };
 
   const handleSave = async () => {
+    if (ignoreFile(addValue)) {
+      message(t('rules:check-name'));
+      return;
+    }
     setAddEdit(false);
     if (!addValue) return;
     await onAdd(addValue);
@@ -35,6 +44,7 @@ const AddDirButton: React.FC<AddDirButtonProps> = ({ onAdd }) => {
       {addEditing && (
         <div>
           <input
+            autoFocus
             value={addValue}
             onChange={handleInput}
             onBlur={handleSave}

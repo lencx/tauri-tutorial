@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import FullScreen from '@layouts/FullSreen';
 import init, { Universe } from '@omb/game-of-life';
 
 import './index.scss';
@@ -15,7 +16,7 @@ export default function GameOfLifePage() {
   }, []);
 
   return (
-    <div className="game-of-life h-screen hv-center flex-col">
+    <FullScreen className="game-of-life h-screen hv-center flex-col">
       <canvas id="game-of-life-canvas" />
       <div className="op mt-4">
         <button id="play-pause-btn" title="play-pause">
@@ -23,7 +24,7 @@ export default function GameOfLifePage() {
         </button>
         {/* <button id="clear-btn" title="clear">🔄</button> */}
       </div>
-    </div>
+    </FullScreen>
   );
 }
 

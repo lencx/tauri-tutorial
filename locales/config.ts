@@ -11,8 +11,9 @@ import tip from './tip';
 import dashboard from './dashboard';
 import tools from './tools';
 import game from './game';
+import rules from './rules';
 
-const i18nData = fmtI18n(common, tip, dashboard, tools, game);
+const i18nData = fmtI18n(common, tip, dashboard, tools, game, rules);
 
 export const resources = i18nData[0];
 

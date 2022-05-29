@@ -1,0 +1,4 @@
+{
+  "check-name": "Name cannot contain special characters",
+  "check-file-exist": "A file or folder <{{name}}> already exists at this location. Please choose a different name."
+}

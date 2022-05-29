@@ -4,22 +4,22 @@
   &-sider {
     position: absolute;
     height: 100%;
-    width: 300px;
+    width: 240px;
     top: 0;
-    box-shadow: 0 0 3px rgba(46, 41, 51, 0.8);
-    overflow-y: scroll;
+    box-shadow: 0 0 3px rgba(46, 41, 51, 0.2);
 
     .sider-head {
-      position: fixed;
       display: flex;
+      width: 240px;
+      overflow-y: scroll;
       height: 50px;
       align-items: center;
       font-weight: bold;
+      background-color: #fff;
     }
 
     .sider-body {
-      padding-top: 50px;
-      height: 100%;
+      height: calc(100% - 50px);
       div {
         padding: 10px;
         cursor: pointer;
@@ -28,7 +28,7 @@
   }
 
   &-body {
-    margin-left: 300px;
+    margin-left: 240px;
     padding: 20px;
     display: flex;
   }

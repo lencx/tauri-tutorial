@@ -3,12 +3,26 @@ import { useNavigate } from 'react-router-dom';
 
 interface OmbItemProps {
   to?: string;
-  className?: string;
   children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
 }
 
-const OmbItem: React.FC<OmbItemProps> = ({ className, children, to }) => {
+const OmbItem: React.FC<OmbItemProps> = ({
+  className,
+  children,
+  onClick,
+  to,
+}) => {
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (to) {
+      navigate(to);
+    }
+    onClick && onClick();
+  };
+
   return (
     <div
       className={clsx('omb-card-group-item w-full h-200px p-3', className)}
@@ -18,16 +32,12 @@ const OmbItem: React.FC<OmbItemProps> = ({ className, children, to }) => {
     >
       <div
         className="h-full shadow-floating rounded-lg omb-hover"
-        onClick={() => to && navigate(to)}
+        onClick={handleClick}
       >
         {children}
       </div>
     </div>
   );
-};
-
-OmbItem.defaultProps = {
-  to: '/',
 };
 
 export default OmbItem;

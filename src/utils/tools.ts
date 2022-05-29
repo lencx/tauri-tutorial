@@ -24,3 +24,5 @@ export const getScreenSize = () => ({
 });
 
 export const fmtDate = (date: Date) => dayjs(date).format('YYYY/MM/DD');
+
+export const ignoreFile = (name: string) => /[\.\\/@\*%#!]/ig.test(name);
