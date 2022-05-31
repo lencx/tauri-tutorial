@@ -19,13 +19,6 @@
     "paths": {
       "@/*": ["./src/*"],
       "@locales/*": ["./locales/*"],
-      "@views/*": ["./src/views/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@comps/*": ["./src/components/*"],
-      "@sys/*": ["./src/system/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@layouts/*": ["./src/layouts/*"],
       "@plugins/*": ["./plugins/*"]
     }
   },

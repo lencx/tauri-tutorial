@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import GoBack from '@comps/GoBack';
+import GoBack from '@/components/GoBack';
 
 import './fullscreen.scss';
 

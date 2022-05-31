@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react/dist/offline';
 import langIcon from '@iconify-icons/fa/language';
-import { useGetLang, useSetLang } from '@hooks/useLang';
-import React from 'react';
+
+import { useGetLang, useSetLang } from '@/hooks/useLang';
 
 export default function DashboardView() {
   const lang = useGetLang();

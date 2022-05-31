@@ -3,8 +3,10 @@ import { message } from '@tauri-apps/api/dialog';
 import { Icon } from '@iconify/react/offline';
 import folderPlusIcon from '@iconify-icons/mdi/folder-plus';
 
-import { ignoreFile } from '@utils/tools';
-import useI18n from '@hooks/useI18n';
+import { ignoreFile } from '@/utils/tools';
+import useI18n from '@/hooks/useI18n';
+
+import './index.scss';
 
 interface AddDirButtonProps {
   onAdd: (name: string) => Promise<void>;
@@ -41,18 +43,24 @@ const AddDirButton: React.FC<AddDirButtonProps> = ({ onAdd }) => {
   };
 
   return (
-    <div>
-      <Icon onClick={handleAdd} icon={folderPlusIcon} fontSize="24" />
+    <div className="omb-add-dir">
+      <Icon
+        className="omb-hover"
+        onClick={handleAdd}
+        icon={folderPlusIcon}
+        fontSize={18}
+        color="var(--blue)"
+      />
       {addEditing && (
-        <div>
-          <input
-            autoFocus
-            value={addValue}
-            onChange={handleInput}
-            onBlur={handleSave}
-            onKeyDown={handleKeyDown}
-          />
-        </div>
+        <input
+          autoFocus
+          autoComplete="off"
+          className="ml2"
+          value={addValue}
+          onChange={handleInput}
+          onBlur={handleSave}
+          onKeyDown={handleKeyDown}
+        />
       )}
     </div>
   );

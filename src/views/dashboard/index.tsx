@@ -1,7 +1,7 @@
 import OmbCard, { OmbItem } from '@/components/OmbCard';
-import SwitchLang from '@comps/SwitchLang';
+import SwitchLang from '@/components/SwitchLang';
 
-import useI18n from '@hooks/useI18n';
+import useI18n from '@/hooks/useI18n';
 import ohmyboxIcon from '@/oh-my-box.svg';
 
 export default function DashboardView() {

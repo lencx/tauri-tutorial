@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import FullScreen from '@layouts/FullSreen';
+import FullScreen from '@/layouts/FullSreen';
 import init, { Universe } from '@omb/game-of-life';
 
 import './index.scss';

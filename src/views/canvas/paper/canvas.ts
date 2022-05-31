@@ -42,6 +42,15 @@ export class Brush {
     return this.canvas?.toDataURL();
   }
 
+  drawImage = (input: string) => {
+    const img = new Image();
+    const _ctx = this.ctx;
+    img.onload = () => {
+      _ctx?.drawImage(img, 0, 0);
+    }
+    img.src = input;
+  }
+
   clear = () => {
     this.ctx?.clearRect(0, 0, this.canvas?.width || 0, this.canvas?.height || 0);
   }

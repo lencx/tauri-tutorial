@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
 
-import Tabs from '@comps/Tabs';
-import Tooltip from '@comps/Tooltip';
-import useI18n from '@hooks/useI18n';
-import useLocalColor from '@hooks/useLocalColor';
+import Tabs from '@/components/Tabs';
+import Tooltip from '@/components/Tooltip';
+import useI18n from '@/hooks/useI18n';
+import useLocalColor from '@/hooks/useLocalColor';
 import './index.scss';
 
 const { TabPane } = Tabs;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import Popover from '@comps/Popover';
-import TooltipSlider from '@comps/Slider';
-import { setCSS } from '@utils/color';
-import useI18n from '@hooks/useI18n';
+import useI18n from '@/hooks/useI18n';
+import { setCSS } from '@/utils/color';
+import Popover from '@/components/Popover';
+import TooltipSlider from '@/components/Slider';
 
 import BrushIcon from '../BrushIcon';
 import EraserIcon from '../EraserIcon';
@@ -108,6 +108,7 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
       <div className="eraser-btn" onClick={() => handleChange('eraser')}>
         <EraserIcon />
       </div>
+      <button onClick={() => handleChange('save')}>save</button>
     </div>
   );
 };

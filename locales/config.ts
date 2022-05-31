@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 // https://github.com/i18next/i18next-browser-languageDetector
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import { fmtI18n } from '@utils/tools';
+import { fmtI18n } from '@/utils/tools';
 
 import common from './common';
 import tip from './tip';

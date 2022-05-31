@@ -4,7 +4,8 @@ import backIcon from '@iconify-icons/mdi/arrow-back';
 import clsx from 'clsx';
 
 import useI18n from '@/hooks/useI18n';
-import Tooltip from '@comps/Tooltip';
+import Tooltip from '@/components/Tooltip';
+
 import './index.scss';
 
 interface GoBackProps {

@@ -2,10 +2,10 @@ import { useLayoutEffect } from 'react';
 import { useLocation, useRoutes } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 
-import DashboardView from '@views/dashboard';
-import CanvasView from '@views/canvas';
-import CanvasPaperView from '@views/canvas/paper';
-import GameOfLifeView from '@views/game_of_life';
+import DashboardView from '@/views/dashboard';
+import CanvasView from '@/views/canvas';
+import CanvasPaperView from '@/views/canvas/paper';
+import GameOfLifeView from '@/views/game_of_life';
 
 const routes: RouteObject[] = [
   {
@@ -17,7 +17,7 @@ const routes: RouteObject[] = [
     element: <CanvasView />,
   },
   {
-    path: 'tools/canvas/paper/:file',
+    path: 'tools/canvas/paper/:path/:file',
     element: <CanvasPaperView />,
   },
   {

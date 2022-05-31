@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import includes from 'lodash/includes';
 import {
   BaseDirectory,
@@ -6,13 +6,14 @@ import {
   removeDir as TauriRemoveDir,
   removeFile as TauriRemoveFile,
   writeFile,
+  readTextFile,
 } from "@tauri-apps/api/fs";
 import { homeDir } from "@tauri-apps/api/path";
 import { message } from '@tauri-apps/api/dialog';
 
-import useI18n from '@hooks/useI18n';
-import { ignoreFile } from '@utils/tools';
+import useI18n from '@/hooks/useI18n';
 import { metadata } from '@plugins/fsExtra';
+import { ignoreFile } from '@/utils/tools';
 import type { Metadata } from '@plugins/fsExtra';
 
 export type FileEntryInfo = {
@@ -26,14 +27,37 @@ export type TocPaneInfo = {
   children: FileEntryInfo[];
 };
 
+export const canvasRoot = async () => {
+  const _root = await homeDir();
+  return `${_root}.omb/canvas`
+};
+
+export const saveCanvas = async (filePath = '', contents = '') => {
+  await writeFile({
+    path: `.omb/canvas/${filePath}`,
+    contents,
+  }, { dir: BaseDirectory.Home });
+};
+
+export const getCanvas = async (path = '') => {
+  const content = await readTextFile(path);
+  return { path, content };
+};
+
+export const getImageData = async (path = '') => {
+  const _root = await canvasRoot();
+  const content = await readTextFile(`${_root}/${path}`);
+  return content;
+};
+
 export const useCanvas = () => {
   const t = useI18n(['rules']);
   const [tocTree, setTocTree] = useState<FileEntryInfo[]>([]);
   const [tocPane, setTocPane] = useState<TocPaneInfo>();
   const [tocIndex, setTocIndex] = useState(0);
 
-  const init = useCallback(async () => {
-    const dirPath = await root();
+  const init = async () => {
+    const dirPath = await canvasRoot();
     const group: FileEntryInfo[] = [];
     await readDir(dirPath)
       .then((_dirs) => {
@@ -53,16 +77,11 @@ export const useCanvas = () => {
         });
       })
       .catch((err) => message(err));
-  }, [])
+  };
 
   useEffect(() => {
     init();
   }, []);
-
-  const root = async () => {
-    const _root = await homeDir();
-    return `${_root}.omb/canvas`
-  };
 
   const setToc = async (index: number, newTocTree?: FileEntryInfo[]) => {
     const _tocTree = newTocTree || tocTree;
@@ -93,7 +112,7 @@ export const useCanvas = () => {
   };
 
   const renameDir = async (oldPath: string, newPath: string) => {
-    const dirPath = await root();
+    const dirPath = await canvasRoot();
     await renameFile(`${dirPath}/${oldPath}`, `${dirPath}/${newPath}`);
     const index = tocTree.findIndex(dir => dir.name === oldPath);
     const _tocTree = [...tocTree];
@@ -111,7 +130,7 @@ export const useCanvas = () => {
       dir: BaseDirectory.Home,
       // recursive: true,
     });
-    const dirPath = await root();
+    const dirPath = await canvasRoot();
     const filePath = `${dirPath}/${name}`;
     const info = await metadata(filePath);
     const dirInfo = { name, path: filePath, ...info };
@@ -165,7 +184,6 @@ export const useCanvas = () => {
       _tocPane.children = tocPane?.children.filter(i => i.name !== file);
       setTocPane(_tocPane);
     }
-    // setToc(tocIndex,);
   };
 
   return { tocTree, tocIndex, tocPane, setToc, renameDir, addDir, removeDir, addFile, removeFile };

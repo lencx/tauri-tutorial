@@ -1,11 +1,11 @@
 .omb-input-text {
-  cursor: text;
-  border: dashed 1px transparent;
   height: 20px;
+  border: dashed 1px transparent;
+  // cursor: text;
 
-  &:hover {
-    border: dashed 1px #000;
-  }
+  // &:hover {
+  //   border: dashed 1px #000;
+  // }
 
   .text {
     display: inline-block;

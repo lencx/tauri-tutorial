@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'uno.css';
 
 import '@locales/config';
-import '@styles/index.scss';
+import '@/styles/index.scss';
 
 import Routes from './routes';
 
