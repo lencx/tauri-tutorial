@@ -1,8 +1,9 @@
 .omb-goback {
-  background-color: #fff;
+  background-color: rgba(46, 41, 51, 0.2);
   font-size: 1.2rem;
   width: 30px;
   height: 30px;
+  margin: 0 5px;
 
   &.fixed {
     position: fixed;

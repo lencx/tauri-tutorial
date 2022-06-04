@@ -1,6 +1,6 @@
 {
   "package": {
-    "productName": "OhMyBox",
+    "productName": "Oh My Box",
     "version": "0.1.0"
   },
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
@@ -11,6 +11,11 @@
     "distDir": "../dist"
   },
   "tauri": {
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
+    "macOSPrivateApi": true,
     "allowlist": {
       "all": true,
       "fs": {
@@ -62,7 +67,8 @@
         "height": 600,
         "resizable": true,
         "fullscreen": false,
-        "title": "Oh My Box"
+        "title": "Oh My Box",
+        "transparent": true
       }
     ]
   }

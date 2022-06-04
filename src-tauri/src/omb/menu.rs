@@ -1,5 +1,6 @@
 use tauri::{Menu, MenuItem, Submenu};
 
+/// omb menu
 pub fn init() -> Menu {
     let ctx = tauri::generate_context!();
 

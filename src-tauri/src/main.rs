@@ -3,14 +3,15 @@
     windows_subsystem = "windows"
 )]
 
-mod fs_extra;
-mod menu;
-use fs_extra::FsExtra;
+mod omb;
 
 fn main() {
     tauri::Builder::default()
-        .menu(menu::init())
-        .plugin(FsExtra::default())
+        .setup(omb::setup::init)
+        .plugin(omb::fs::FsExtra::default())
+        .system_tray(omb::tray::menu())
+        .menu(omb::menu::init())
+        .on_system_tray_event(omb::tray::menu_event)
         .run(tauri::generate_context!())
         .expect("error while running OhMyBox application");
 }
