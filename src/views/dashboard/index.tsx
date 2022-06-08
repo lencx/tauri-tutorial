@@ -10,9 +10,6 @@ export default function DashboardView() {
   return (
     <div className="p-5">
       <SwitchLang />
-      <div className="hv-center">
-        <img width={160} src={ohmyboxIcon} alt="logo" />
-      </div>
       <OmbCard title={t('dashboard:tools')}>
         <OmbItem to="/tools/canvas">{t('tools:canvas')}</OmbItem>
       </OmbCard>
