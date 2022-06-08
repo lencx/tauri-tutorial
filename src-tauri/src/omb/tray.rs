@@ -21,11 +21,26 @@ pub fn menu() -> SystemTray {
 pub fn menu_event(app: &AppHandle, event: SystemTrayEvent) {
     match event {
         SystemTrayEvent::LeftClick {
-            position: _,
+            position,
             size: _,
             ..
         } => {
             println!("system tray received a left click");
+            let win = app.get_window("main").unwrap();
+            win.show().unwrap();
+            let logical_size = tauri::LogicalSize::<f64> {
+                width: 300.00,
+                height: 500.00,
+            };
+            let size = tauri::Size::Logical(logical_size);
+            win.set_size(size).unwrap();
+            let logical_position = tauri::LogicalPosition::<f64> {
+                x: position.x / 2.0,
+                y: position.y - logical_size.height - 50.,
+            };
+            let pos = tauri::Position::Logical(logical_position);
+            win.set_position(pos).unwrap();
+            win.set_focus().unwrap();
         }
         SystemTrayEvent::RightClick {
             position: _,
