@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
 
 import useI18n from '@/hooks/useI18n';
 import { setCSS } from '@/utils/color';
@@ -11,17 +12,33 @@ import ColorPicker from '../ColorPicker';
 import './index.scss';
 
 interface ToolPaletteProps {
+  onSave: () => void;
+  onEraser: (isEraser: boolean) => void;
   onChange: (key: string, value?: any) => void;
 }
 
-const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
+const ToolPalette: React.FC<ToolPaletteProps> = ({
+  onChange,
+  onSave,
+  onEraser,
+}) => {
   const t = useI18n(['common']);
   const [color, setColor] = useState('#000000');
   const [size, setSize] = useState(1);
   const [opacity, setOpacity] = useState(100);
+  const [isEraser, setEraser] = useState(false);
 
   const handleChange = (key: string, value?: any) => {
     onChange && onChange(key, value);
+  };
+
+  const handleEraser = () => {
+    setEraser(!isEraser);
+    onEraser && onEraser(!isEraser);
+  };
+
+  const handleSave = () => {
+    onSave && onSave();
   };
 
   const handleColor = (c: string) => {
@@ -105,10 +122,13 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({ onChange }) => {
         </button>
       </Popover>
       <div className="omb-tool-line" />
-      <div className="eraser-btn" onClick={() => handleChange('eraser')}>
+      <div
+        className={clsx('eraser-btn', { active: isEraser })}
+        onClick={handleEraser}
+      >
         <EraserIcon />
       </div>
-      <button onClick={() => handleChange('save')}>save</button>
+      <button onClick={handleSave}>save</button>
     </div>
   );
 };

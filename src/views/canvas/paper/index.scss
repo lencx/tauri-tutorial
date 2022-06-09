@@ -1,6 +1,8 @@
 .canvas_paper_screen {
   height: 100vh;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
 
   .omb-canvas-paper {
     cursor: url('./icons/cursor.svg') 3 3, auto;

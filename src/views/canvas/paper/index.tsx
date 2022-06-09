@@ -30,21 +30,26 @@ export default function CanvasPaperView(props: any) {
   }, []);
 
   const handleToolbar = (key: string, val: any) => {
-    if (key === 'save') {
-      const image = InitBrush.save();
-      saveCanvas(filePath, image);
-      return;
-    }
-    if (key === 'eraser') {
-      InitBrush.eraser();
-    }
     InitBrush.run(key, val);
+  };
+
+  const handleSave = () => {
+    const image = InitBrush.save();
+    saveCanvas(filePath, image);
+  };
+
+  const handleEraser = (isEraser: boolean) => {
+    InitBrush.eraser(isEraser);
   };
 
   return (
     <div className="omb-canvas-paper">
       <GoBack />
-      <ToolPalette onChange={handleToolbar} />
+      <ToolPalette
+        onChange={handleToolbar}
+        onEraser={handleEraser}
+        onSave={handleSave}
+      />
       <canvas ref={canvasRef} className="select-none" />
     </div>
   );

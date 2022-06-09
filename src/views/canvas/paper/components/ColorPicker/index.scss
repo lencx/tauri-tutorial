@@ -58,6 +58,7 @@
           border: solid 1px #e8eaed;
           cursor: pointer;
           user-select: none;
+          -webkit-user-select: none;
           transition: 100ms ease;
         }
 

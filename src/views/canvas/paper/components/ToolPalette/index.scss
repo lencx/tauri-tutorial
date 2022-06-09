@@ -10,6 +10,8 @@
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   cursor: auto;
+  user-select: none;
+  -webkit-user-select: none;
 
   .color-btn {
     width: 30px;
@@ -36,7 +38,20 @@
   }
 
   .eraser-btn {
-    width: 100px;
+    transform: translateX(-40px);
+    transition: transform 300ms ease-in-out;
+    filter: grayscale(1);
+    padding: 3px 0;
+
+    svg {
+      width: 100px;
+      height: 32px;
+    }
+
+    &.active {
+      transform: translateX(-10px);
+      filter: grayscale(0);
+    }
   }
 }
 

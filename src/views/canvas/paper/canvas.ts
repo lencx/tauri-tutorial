@@ -55,9 +55,9 @@ export class Brush {
     this.ctx?.clearRect(0, 0, this.canvas?.width || 0, this.canvas?.height || 0);
   }
 
-  eraser = () => {
+  eraser = (isEraser: boolean) => {
     if (!this.ctx) return;
-    this.ctx.globalCompositeOperation = 'destination-out';
+    this.ctx.globalCompositeOperation = isEraser ? 'destination-out' : 'source-over';
   }
 
   run = (method: string, value: any) => {
