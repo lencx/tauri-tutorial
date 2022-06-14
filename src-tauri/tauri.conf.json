@@ -68,7 +68,9 @@
         "resizable": true,
         "fullscreen": false,
         "title": "Oh My Box",
-        "transparent": true
+        "transparent": true,
+        "label": "main",
+        "url": "index.html"
       }
     ]
   }

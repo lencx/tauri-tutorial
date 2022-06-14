@@ -27,3 +27,4 @@ dist-ssr
 .rsw/
 target/
 Cargo.lock
+.woap
