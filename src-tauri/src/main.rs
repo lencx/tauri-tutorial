@@ -6,12 +6,14 @@
 mod omb;
 
 fn main() {
+    let context = tauri::generate_context!();
     tauri::Builder::default()
         .setup(omb::setup::init)
         .plugin(omb::fs::FsExtra::default())
         .system_tray(omb::tray::menu())
-        .menu(omb::menu::init())
+        // .menu(omb::menu::init())
+        .menu(tauri::Menu::os_default(&context.package_info().name))
         .on_system_tray_event(omb::tray::menu_event)
-        .run(tauri::generate_context!())
+        .run(context)
         .expect("error while running OhMyBox application");
 }

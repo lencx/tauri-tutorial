@@ -13,5 +13,10 @@ export default defineConfig({
     Unocss(unoOptions),
     tsconfigPaths(),
     react(),
-  ]
+  ],
+  esbuild: {
+    // [vite] warning: Top-level "this" will be replaced with undefined since this file is an ECMAScript module
+    // https://github.com/vitejs/vite/issues/8644
+    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+  }
 })
