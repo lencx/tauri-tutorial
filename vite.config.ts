@@ -14,6 +14,17 @@ export default defineConfig({
     tsconfigPaths(),
     react(),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          utils: ['lodash', 'uuid', 'dayjs', 'clsx'],
+          react: ['react', 'react-dom', 'react-router-dom'],
+          i18next: ['i18next', 'react-i18next'],
+        }
+      }
+    }
+  },
   esbuild: {
     // [vite] warning: Top-level "this" will be replaced with undefined since this file is an ECMAScript module
     // https://github.com/vitejs/vite/issues/8644

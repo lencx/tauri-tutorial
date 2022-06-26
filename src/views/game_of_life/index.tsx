@@ -16,7 +16,7 @@ export default function GameOfLifePage() {
   }, []);
 
   return (
-    <FullScreen className="game-of-life h-screen hv-center flex-col">
+    <FullScreen className="game-of-life-view h-screen hv-center flex-col">
       <canvas id="game-of-life-canvas" />
       <div className="op mt-4">
         <button id="play-pause-btn" title="play-pause">

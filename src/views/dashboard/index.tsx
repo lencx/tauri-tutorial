@@ -2,7 +2,7 @@ import OmbCard, { OmbItem } from '@/components/OmbCard';
 import SwitchLang from '@/components/SwitchLang';
 
 import useI18n from '@/hooks/useI18n';
-import ohmyboxIcon from '@/oh-my-box.svg';
+// import ohmyboxIcon from '@/oh-my-box.svg';
 
 export default function DashboardView() {
   const t = useI18n(['dashboard', 'tools', 'game']);
@@ -15,6 +15,9 @@ export default function DashboardView() {
       </OmbCard>
       <OmbCard title={t('dashboard:game')}>
         <OmbItem to="/game/game-of-life">{t('game:game-of-life')}</OmbItem>
+      </OmbCard>
+      <OmbCard title={t('dashboard:editor')}>
+        <OmbItem to="/mdhub">{t('game:mdhub')}</OmbItem>
       </OmbCard>
       {/* <OmbCard title={t('dashboard:video')}></OmbCard>
       <OmbCard title={t('dashboard:other')}></OmbCard> */}

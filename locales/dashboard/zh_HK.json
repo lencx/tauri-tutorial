@@ -3,5 +3,7 @@
   "video": "視頻",
   "game": "遊戲",
   "other": "其他",
-  "canvas": "畫板"
+  "canvas": "畫板",
+  "editor": "Editor",
+  "mdhub": "MdHub"
 }

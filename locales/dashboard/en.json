@@ -2,5 +2,7 @@
   "tools": "Tools",
   "video": "Video",
   "game": "Game",
-  "other": "Other"
+  "other": "Other",
+  "editor": "Editor",
+  "mdhub": "MdHub"
 }

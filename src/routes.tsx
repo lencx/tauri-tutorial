@@ -6,6 +6,7 @@ import DashboardView from '@/views/dashboard';
 import CanvasView from '@/views/canvas';
 import CanvasPaperView from '@/views/canvas/paper';
 import GameOfLifeView from '@/views/game_of_life';
+import MdHub from '@/views/mdhub';
 
 const routes: RouteObject[] = [
   {
@@ -23,6 +24,10 @@ const routes: RouteObject[] = [
   {
     path: 'game/game-of-life',
     element: <GameOfLifeView />,
+  },
+  {
+    path: 'mdhub',
+    element: <MdHub />,
   },
 ];
 
