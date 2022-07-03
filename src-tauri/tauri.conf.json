@@ -1,7 +1,7 @@
 {
   "package": {
-    "productName": "Oh My Box",
-    "version": "0.1.0"
+    "productName": "OhMyBox",
+    "version": "../package.json"
   },
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {

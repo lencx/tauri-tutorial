@@ -1,7 +1,7 @@
 {
   "name": "omb",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.1",
   "author": "lencx <cxin1314@gmail.com>",
   "scripts": {
     "dev": "vite",

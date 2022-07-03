@@ -36,6 +36,13 @@ yarn rsw watch
 yarn tauri dev
 ```
 
+## 开发教程
+
+> 关注 《浮之静》公众号，回复 `tauri` 进技术交流群
+
+- [GitHub Discussions - Tauri 系列](https://github.com/lencx/OhMyBox/discussions?discussions_q=label%3A%22Tauri+%E7%B3%BB%E5%88%97%22)
+- [知乎专栏 - Tauri 系列](https://www.zhihu.com/column/c_1519079232848785408)
+
 ## License
 
 GPL-3.0 license © 2022 lencx
