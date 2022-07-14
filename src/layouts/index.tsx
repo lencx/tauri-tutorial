@@ -20,6 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ title, sider, children }) => {
           <div className="omb-layout-sider-scroll">{sider}</div>
         </div>
       </div>
+
       <div className="omb-layout-body">
         <div className="omb-layout-body-scroll omb-scrollbar">{children}</div>
       </div>

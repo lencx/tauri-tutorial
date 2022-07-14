@@ -27,37 +27,31 @@ export type TocPaneInfo = {
   children: FileEntryInfo[];
 };
 
-export const canvasRoot = async () => {
+export const getRoot = async (path: string) => {
   const _root = await homeDir();
-  return `${_root}.omb/canvas`
+  return _root + path;
 };
 
-export const saveCanvas = async (filePath = '', contents = '') => {
+export const getFile = async (path = '') => {
+  const content = await readTextFile(path, { dir: BaseDirectory.Home });
+  return { path, content };
+};
+
+export const saveFile = async (path: string, contents = '') => {
   await writeFile({
-    path: `.omb/canvas/${filePath}`,
+    path,
     contents,
   }, { dir: BaseDirectory.Home });
 };
 
-export const getCanvas = async (path = '') => {
-  const content = await readTextFile(path);
-  return { path, content };
-};
-
-export const getImageData = async (path = '') => {
-  const _root = await canvasRoot();
-  const content = await readTextFile(`${_root}/${path}`);
-  return content;
-};
-
-export const useCanvas = () => {
+export const useTree = (root: string) => {
   const t = useI18n(['rules']);
   const [tocTree, setTocTree] = useState<FileEntryInfo[]>([]);
   const [tocPane, setTocPane] = useState<TocPaneInfo>();
   const [tocIndex, setTocIndex] = useState(0);
 
   const init = async () => {
-    const dirPath = await canvasRoot();
+    const dirPath = await getRoot(root);
     const group: FileEntryInfo[] = [];
     await readDir(dirPath)
       .then((_dirs) => {
@@ -112,7 +106,7 @@ export const useCanvas = () => {
   };
 
   const renameDir = async (oldPath: string, newPath: string) => {
-    const dirPath = await canvasRoot();
+    const dirPath = await getRoot(root);
     await renameFile(`${dirPath}/${oldPath}`, `${dirPath}/${newPath}`);
     const index = tocTree.findIndex(dir => dir.name === oldPath);
     const _tocTree = [...tocTree];
@@ -126,11 +120,11 @@ export const useCanvas = () => {
       message(t('rules:check-file-exist', { name }));
       return;
     };
-    await createDir(`.omb/canvas/${name}`, {
+    await createDir(`${root}/${name}`, {
       dir: BaseDirectory.Home,
       // recursive: true,
     });
-    const dirPath = await canvasRoot();
+    const dirPath = await getRoot(root);
     const filePath = `${dirPath}/${name}`;
     const info = await metadata(filePath);
     const dirInfo = { name, path: filePath, ...info };
@@ -147,7 +141,7 @@ export const useCanvas = () => {
       return hasName;
     });
     if (index === -1) return;
-    await TauriRemoveDir(`.omb/canvas/${name}`, {
+    await TauriRemoveDir(`${root}/${name}`, {
       dir: BaseDirectory.Home,
       recursive: true,
     });

@@ -3,23 +3,24 @@ import { useParams } from 'react-router-dom';
 
 import GoBack from '@/components/GoBack';
 import useFullCanvas from '@/hooks/useFullCanvas';
+import { saveFile, getFile } from '@/system/fs';
+import { CANVAS_ROOT } from '@/utils/constant';
 
 import ToolPalette from './components/ToolPalette';
 import { Brush } from './canvas';
-import { saveCanvas, getImageData } from '../fs';
 import './index.scss';
 
 const InitBrush = new Brush();
 
-export default function CanvasPaperView(props: any) {
+export default function CanvasPaperView() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useFullCanvas(canvasRef);
   const { path, file } = useParams();
-  const filePath = `${path}/${file}`;
+  const filePath = `${CANVAS_ROOT}/${path}/${file}`;
 
   const handleImage = async () => {
-    const data = await getImageData(filePath);
-    InitBrush.drawImage(data);
+    const data = await getFile(filePath);
+    InitBrush.drawImage(data.content);
   };
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function CanvasPaperView(props: any) {
 
   const handleSave = () => {
     const image = InitBrush.save();
-    saveCanvas(filePath, image);
+    saveFile(filePath, image);
   };
 
   const handleEraser = (isEraser: boolean) => {

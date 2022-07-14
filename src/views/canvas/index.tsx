@@ -8,10 +8,11 @@ import fileImageIcon from '@iconify-icons/mdi/file-image-plus';
 import Layout from '@/layouts/index';
 import InputText from '@/components/InputText';
 import OmbCard, { OmbItem } from '@/components/OmbCard';
+import { useTree, getFile } from '@/system/fs';
+import { CANVAS_ROOT } from '@/utils/constant';
 
 import AddDirButton from './components/AddDirButton';
 import DeleteButton from './components/DeleteButton';
-import { useCanvas, getCanvas } from './fs';
 
 import './index.scss';
 import { useEffect } from 'react';
@@ -27,7 +28,7 @@ export default function CanvasView() {
     removeDir,
     addFile,
     removeFile,
-  } = useCanvas();
+  } = useTree(CANVAS_ROOT);
 
   const [imgMap, setImgMap] = useState<any>({});
 
@@ -42,15 +43,13 @@ export default function CanvasView() {
   const papers = tocPane?.children || [];
 
   useEffect(() => {
-    Promise.all(papers.map(async (i) => await getCanvas(i.path))).then(
-      (vals) => {
-        const _imgMap = vals.reduce(
-          (a, b) => ({ ...a, [b.path]: b.content }),
-          {}
-        );
-        setImgMap(_imgMap);
-      }
-    );
+    Promise.all(papers.map(async (i) => await getFile(i.path))).then((vals) => {
+      const _imgMap = vals.reduce(
+        (a, b) => ({ ...a, [b.path]: b.content }),
+        {}
+      );
+      setImgMap(_imgMap);
+    });
   }, [tocPane?.name]);
 
   return (
