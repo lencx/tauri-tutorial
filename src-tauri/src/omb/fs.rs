@@ -114,6 +114,11 @@ async fn metadata(path: PathBuf) -> Result<Metadata> {
     })
 }
 
+#[command]
+async fn exists(path: PathBuf) -> bool {
+    path.exists()
+}
+
 /// Tauri plugin.
 pub struct FsExtra<R: Runtime> {
     invoke_handler: Box<dyn Fn(Invoke<R>) + Send + Sync>,
@@ -122,7 +127,7 @@ pub struct FsExtra<R: Runtime> {
 impl<R: Runtime> Default for FsExtra<R> {
     fn default() -> Self {
         Self {
-            invoke_handler: Box::new(tauri::generate_handler![metadata]),
+            invoke_handler: Box::new(tauri::generate_handler![exists, metadata]),
         }
     }
 }
