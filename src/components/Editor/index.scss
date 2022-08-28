@@ -3,4 +3,9 @@
   height: 100vh;
   overflow: scroll;
   resize: both;
+
+  .preview {
+    overflow: auto;
+    height: 100%;
+  }
 }
