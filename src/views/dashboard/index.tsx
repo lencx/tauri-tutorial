@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
 import OmbCard, { OmbItem } from '@/components/OmbCard';
 import SwitchLang from '@/components/SwitchLang';
+
+import path from '@tauri-apps/api/path';
 
 import useI18n from '@/hooks/useI18n';
 // import ohmyboxIcon from '@/oh-my-box.svg';

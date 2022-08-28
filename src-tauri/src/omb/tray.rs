@@ -18,12 +18,10 @@ pub fn menu() -> SystemTray {
 }
 
 /// omb system tray event
-pub fn menu_event(app: &AppHandle, event: SystemTrayEvent) {
+pub fn handler(app: &AppHandle, event: SystemTrayEvent) {
     match event {
         SystemTrayEvent::LeftClick {
-            position,
-            size: _,
-            ..
+            position, size: _, ..
         } => {
             println!("system tray received a left click");
             let win = app.get_window("main").unwrap();

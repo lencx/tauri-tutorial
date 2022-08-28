@@ -1,23 +1,11 @@
-// use tauri::{Menu, MenuItem, AboutMetadata, Submenu};
+use tauri::utils::assets::EmbeddedAssets;
+use tauri::{Context, Menu, WindowMenuEvent};
 
-// /// omb menu
-// pub fn init() -> Menu {
-//     let ctx = tauri::generate_context!();
-//     let name = &ctx.package_info().name;
+#[allow(dead_code)]
+pub fn init(context: &Context<EmbeddedAssets>) -> Menu {
+    let name = &context.package_info().name;
+    tauri::Menu::os_default(name)
+}
 
-//     Menu::new()
-//         .add_submenu(Submenu::new(
-//             name,
-//             Menu::new()
-//                 .add_native_item(MenuItem::About(
-//                     name.to_string(),
-//                     AboutMetadata::new()
-//                 ))
-//                 .add_native_item(MenuItem::Separator)
-//                 .add_native_item(MenuItem::Hide)
-//                 .add_native_item(MenuItem::HideOthers)
-//                 .add_native_item(MenuItem::ShowAll)
-//                 .add_native_item(MenuItem::Separator)
-//                 .add_native_item(MenuItem::Quit),
-//         ))
-// }
+#[allow(dead_code)]
+pub fn handler(_event: WindowMenuEvent) {}
