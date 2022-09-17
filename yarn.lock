@@ -300,6 +300,13 @@
     "@floating-ui/dom" "^0.5.3"
     use-isomorphic-layout-effect "^1.1.1"
 
+"@iconify-icons/codicon@^1.2.16":
+  version "1.2.16"
+  resolved "https://registry.npmmirror.com/@iconify-icons/codicon/-/codicon-1.2.16.tgz#82c2f9155218dfe19c1edae7124d23114a3756ee"
+  integrity sha512-85rBsFEhhq2qSBfIEF0hzUk31i4GjeRzNyd0DZGFWo5v+PgAeTBiv8ftsTDf8d2fxy9F5kesT/R7bOtRy1xKmw==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-icons/fa@^1.2.2":
   version "1.2.2"
   resolved "https://registry.npmmirror.com/@iconify-icons/fa/-/fa-1.2.2.tgz#3a8dc1bffb7018e15c476581f37f5f174e0331df"
@@ -318,6 +325,11 @@
   version "3.2.2"
   resolved "https://registry.npmmirror.com/@iconify/react/-/react-3.2.2.tgz#ab5241dc01562076bae3b0c22238aff7e5f029cc"
   integrity sha512-z3+Jno3VcJzgNHsN5mEvYMsgCkOZkydqdIwOxjXh45+i2Vs9RGH68Y52vt39izwFSfuYUXhaW+1u7m7+IhCn/g==
+
+"@iconify/types@*":
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
+  integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
 
 "@iconify/types@^1.0.12", "@iconify/types@^1.1.0":
   version "1.1.0"

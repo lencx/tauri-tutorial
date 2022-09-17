@@ -4,8 +4,22 @@
   overflow: scroll;
   resize: both;
 
+  // .overflow-guard {
+  //   .margin {
+  //     background-color: transparent;
+  //   }
+  // }
+  // .minimap-decorations-layer {
+  //   background-color: transparent;
+  // }
+  // .monaco-editor-background {
+  //   background-color: transparent;
+  // }
+
   .preview {
+    background: #fff;
     overflow: auto;
-    height: 100%;
+    height: auto;
+    padding: 20px;
   }
 }

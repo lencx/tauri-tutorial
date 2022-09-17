@@ -9,11 +9,11 @@ import Tooltip from '@/components/Tooltip';
 import './index.scss';
 
 interface GoBackProps {
+  type?: 'float' | 'inline';
   to?: string | number;
-  float?: boolean;
 }
 
-const GoBack: React.FC<GoBackProps> = ({ to, float }) => {
+const GoBack: React.FC<GoBackProps> = ({ type, to }) => {
   const location = useLocation();
   const go = useNavigate();
   const isRoot = location.pathname === '/';
@@ -25,9 +25,7 @@ const GoBack: React.FC<GoBackProps> = ({ to, float }) => {
   return (
     <Tooltip label={t('tip:goback')} sys>
       <span
-        className={clsx('omb-goback hv-center rounded-full omb-hover', {
-          fixed: float,
-        })}
+        className={clsx('omb-goback hv-center rounded-full omb-hover', type)}
       >
         <Icon icon={backIcon} onClick={() => go((to || -1) as string)} />
       </span>
@@ -36,7 +34,7 @@ const GoBack: React.FC<GoBackProps> = ({ to, float }) => {
 };
 
 GoBack.defaultProps = {
-  float: true,
+  type: 'float',
 };
 
 export default GoBack;

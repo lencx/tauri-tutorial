@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ title, sider, children }) => {
     <div className="omb-layout">
       <div className="omb-layout-sider">
         <div className="omb-layout-sider-head">
-          <GoBack float={false} />
+          <GoBack type="inline" />
           {title}
         </div>
         <div className="omb-layout-sider-body omb-scrollbar">

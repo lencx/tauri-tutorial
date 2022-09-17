@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MonacoEditor from '@monaco-editor/react';
 import { Allotment } from 'allotment';
 import 'allotment/dist/style.css';
@@ -19,6 +19,11 @@ const Editor: React.FC<EditorProps> = ({
   preview,
 }) => {
   const [content, setContent] = useState('');
+
+  useEffect(() => {
+    setContent(defaultValue);
+    onChange && onChange(defaultValue);
+  }, [defaultValue]);
 
   const handleMonaco = (val?: string) => {
     onChange && onChange(val);

@@ -1,16 +1,23 @@
 .omb-goback {
-  background-color: rgba(46, 41, 51, 0.2);
-  font-size: 1.2rem;
-  width: 30px;
-  height: 30px;
-  margin: 0 5px;
-
-  &.fixed {
+  &.float {
     position: fixed;
     top: 5px;
     left: 5px;
+    font-size: 1.2rem;
+    margin: 0 5px;
     z-index: 99;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(46, 41, 51, 0.2);
     box-shadow: 0 0 4px rgba(46, 41, 51, 0.2);
+  }
+
+  &.inline {
+    width: 24px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &:hover {

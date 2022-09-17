@@ -1,0 +1,33 @@
+.omb-fullscreen {
+  height: 100vh;
+  overflow: hidden;
+
+  .omb-taskbar {
+    position: fixed;
+    width: 100%;
+    width: 100%;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    height: 28px;
+    background: #fea;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(255, 255, 255, 0.9);
+    justify-content: space-between;
+    padding-right: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .fullscreen-body {
+    padding-top: 30px;
+    height: calc(100vh - 30px);
+  }
+
+  .omb-editor-container {
+    .preview {
+      height: calc(100vh - 30px);
+    }
+  }
+}
