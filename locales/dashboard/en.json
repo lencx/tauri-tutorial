@@ -4,5 +4,8 @@
   "game": "Game",
   "other": "Other",
   "editor": "Editor",
-  "mdhub": "MdHub"
+
+  "canvas": "Canvas",
+  "mdhub": "MdHub",
+  "game-of-life": "Game of Life"
 }

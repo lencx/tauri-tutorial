@@ -33,7 +33,7 @@ const Editor: React.FC<EditorProps> = ({
   return (
     <div className="omb-editor-container">
       <Allotment>
-        <Allotment.Pane minSize={200}>
+        <Allotment.Pane minSize={100}>
           <MonacoEditor
             defaultLanguage={lang}
             defaultValue={defaultValue}
@@ -41,7 +41,7 @@ const Editor: React.FC<EditorProps> = ({
           />
         </Allotment.Pane>
         {preview && (
-          <Allotment.Pane snap>
+          <Allotment.Pane minSize={100}>
             <div className="preview">{preview(content)}</div>
           </Allotment.Pane>
         )}

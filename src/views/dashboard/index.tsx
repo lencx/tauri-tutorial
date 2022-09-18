@@ -1,7 +1,7 @@
 // import { useEffect } from 'react';
 // import path from '@tauri-apps/api/path';
 
-import OmbCard, { OmbItem } from '@/components/OmbCard';
+import OmbCard, { OmbItem, OmbIcon } from '@/components/OmbCard';
 import SwitchLang from '@/components/SwitchLang';
 import useI18n from '@/hooks/useI18n';
 // import ohmyboxIcon from '@/oh-my-box.svg';
@@ -12,17 +12,28 @@ export default function DashboardView() {
   return (
     <div className="p-5">
       <SwitchLang />
-      <OmbCard title={t('dashboard:tools')}>
-        <OmbItem to="/tools/canvas">{t('tools:canvas')}</OmbItem>
+      <OmbCard icon="fa-solid:tools" title="dashboard:tools">
+        <OmbIcon
+          title="dashboard:canvas"
+          icon="ion:color-palette"
+          to="/tools/canvas"
+        />
+        <OmbIcon
+          title="dashboard:mdhub"
+          icon="ion:logo-markdown"
+          to="/tools/mdhub"
+        />
       </OmbCard>
-      <OmbCard title={t('dashboard:editor')}>
-        <OmbItem to="/mdhub">{t('game:mdhub')}</OmbItem>
+      <OmbCard
+        icon="fluent-emoji-high-contrast:game-die"
+        title="dashboard:game"
+      >
+        <OmbIcon
+          title="dashboard:game-of-life"
+          icon="ic:baseline-grid-4x4"
+          to="/game/game-of-life"
+        />
       </OmbCard>
-      <OmbCard title={t('dashboard:game')}>
-        <OmbItem to="/game/game-of-life">{t('game:game-of-life')}</OmbItem>
-      </OmbCard>
-      {/* <OmbCard title={t('dashboard:video')}></OmbCard>
-      <OmbCard title={t('dashboard:other')}></OmbCard> */}
     </div>
   );
 }

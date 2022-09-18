@@ -38,7 +38,6 @@ export class Brush {
   }
 
   save = () => {
-    // this.canvas?.toBlob();
     return this.canvas?.toDataURL();
   }
 

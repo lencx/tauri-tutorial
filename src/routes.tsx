@@ -22,12 +22,12 @@ const routes: RouteObject[] = [
     element: <CanvasPaperView />,
   },
   {
-    path: 'game/game-of-life',
-    element: <GameOfLifeView />,
+    path: '/tools/mdhub',
+    element: <MdHub />,
   },
   {
-    path: 'mdhub',
-    element: <MdHub />,
+    path: 'game/game-of-life',
+    element: <GameOfLifeView />,
   },
 ];
 

@@ -5,10 +5,12 @@ import useI18n from '@/hooks/useI18n';
 import { setCSS } from '@/utils/color';
 import Popover from '@/components/Popover';
 import TooltipSlider from '@/components/Slider';
+import Tooltip from '@/components/Tooltip';
 
 import BrushIcon from '../BrushIcon';
 import EraserIcon from '../EraserIcon';
 import ColorPicker from '../ColorPicker';
+import SaveIcon from '../SaveIcon';
 import './index.scss';
 
 interface ToolPaletteProps {
@@ -22,7 +24,7 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({
   onSave,
   onEraser,
 }) => {
-  const t = useI18n(['common']);
+  const t = useI18n(['common', 'tip']);
   const [color, setColor] = useState('#000000');
   const [size, setSize] = useState(1);
   const [opacity, setOpacity] = useState(100);
@@ -128,7 +130,11 @@ const ToolPalette: React.FC<ToolPaletteProps> = ({
       >
         <EraserIcon />
       </div>
-      <button onClick={handleSave}>save</button>
+      <Tooltip sys label={t('tip:save')}>
+        <button className={clsx('save-btn')} onClick={handleSave}>
+          <SaveIcon />
+        </button>
+      </Tooltip>
     </div>
   );
 };

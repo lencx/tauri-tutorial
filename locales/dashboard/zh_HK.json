@@ -3,7 +3,9 @@
   "video": "視頻",
   "game": "遊戲",
   "other": "其他",
+  "editor": "編輯器",
+
   "canvas": "畫板",
-  "editor": "Editor",
-  "mdhub": "MdHub"
+  "mdhub": "MdHub",
+  "game-of-life": "康威生命遊戲"
 }

@@ -1,5 +1,5 @@
 .omb-fullscreen {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 
   .omb-taskbar {
@@ -27,7 +27,7 @@
 
   .omb-editor-container {
     .preview {
-      height: calc(100vh - 30px);
+      height: 100%;
     }
   }
 }

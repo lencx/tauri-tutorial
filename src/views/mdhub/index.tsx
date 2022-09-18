@@ -6,16 +6,20 @@ import printPreviewIcon from '@iconify-icons/mdi/print-preview';
 import 'highlight.js/styles/agate.css';
 import 'github-markdown-css';
 
+import useI18n from '@/hooks/useI18n';
 import FullScreen from '@/layouts/FullSreen';
 import Editor from '@/components/Editor';
+import Tooltip from '@/components/Tooltip';
 import { mdParser } from '@/utils/mdParser';
 
 import './index.scss';
 
 export default function MdHubView() {
+  const t = useI18n(['tip']);
   const [isPreview, setPreview] = useState(false);
   const [content, setContent] = useState('');
-  const handlePreivew = () => {
+
+  const handlePreview = () => {
     setPreview(!isPreview);
   };
 
@@ -32,10 +36,12 @@ export default function MdHubView() {
       taskbar={
         <>
           <div>
-            <Icon
-              icon={isPreview ? openPreviewIcon : printPreviewIcon}
-              onClick={handlePreivew}
-            />
+            <Tooltip label={t('tip:mdPreview')}>
+              <Icon
+                icon={isPreview ? openPreviewIcon : printPreviewIcon}
+                onClick={handlePreview}
+              />
+            </Tooltip>
             <Icon icon={pdfIcon} onClick={handleImportPDF} />
           </div>
         </>

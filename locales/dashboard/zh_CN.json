@@ -3,7 +3,9 @@
   "video": "视频",
   "game": "游戏",
   "other": "其他",
+  "editor": "编辑器",
+
   "canvas": "画板",
-  "editor": "Editor",
-  "mdhub": "MdHub"
+  "mdhub": "MdHub",
+  "game-of-life": "Game of Life"
 }

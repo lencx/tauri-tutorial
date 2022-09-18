@@ -1,6 +1,6 @@
 .omb-tooltip {
-  background: #2A2A2A;
-  color: #FFF;
+  background: #2a2a2a;
+  color: #fff;
   pointer-events: none;
   border-radius: 6px;
   padding: 4px 6px;
@@ -9,7 +9,8 @@
 
   &.sys {
     font-size: 0.5rem;
-    background-color: #989898;
+    background-color: #eee;
+    color: #3a3a3a;
     border-radius: 2px;
     padding: 2px 4px;
   }

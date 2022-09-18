@@ -6,7 +6,7 @@
   width: 60px;
   background-color: #fff;
   padding: 10px;
-  filter: drop-shadow(0 1px 3px #3C40434D) drop-shadow(0 4px 8px #3C404326);
+  filter: drop-shadow(0 1px 3px #3c40434d) drop-shadow(0 4px 8px #3c404326);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   cursor: auto;
@@ -53,6 +53,22 @@
       filter: grayscale(0);
     }
   }
+
+  .save-btn {
+    all: unset;
+    cursor: pointer;
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      svg path {
+        fill: #121212;
+      }
+    }
+  }
 }
 
 .color-popover {
@@ -84,13 +100,19 @@
     width: 60px;
     height: 60px;
     margin-left: 30px;
-    background-image: linear-gradient(45deg,
-        var(--square-color) 26%, transparent 25%, transparent 75%,
+    background-image: linear-gradient(
+        45deg,
+        var(--square-color) 26%,
+        transparent 25%,
+        transparent 75%,
         var(--square-color) 75%,
         var(--square-color)
       ),
-      linear-gradient(45deg,
-        var(--square-color) 26%, transparent 25%, transparent 75%,
+      linear-gradient(
+        45deg,
+        var(--square-color) 26%,
+        transparent 25%,
+        transparent 75%,
         var(--square-color) 75%,
         var(--square-color)
       );
