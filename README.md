@@ -45,10 +45,14 @@ yarn tauri dev
 - [GitHub Discussions - Tauri 系列](https://github.com/lencx/OhMyBox/discussions?discussions_q=label%3A%22Tauri+%E7%B3%BB%E5%88%97%22)
 - [知乎专栏 - Tauri 系列](https://www.zhihu.com/column/c_1519079232848785408)
 
+## 赞助
+
+[☕️ 请我喝杯咖啡](https://github.com/lencx/sponsor)
+
 ## 微信交流群
 
 > 如群二维码过期，可关注公众号《浮之静》，发送“进群”，和小伙伴一起学习交流。
- 
+
 <img alt="Tauri 交流群" width="240" src="https://user-images.githubusercontent.com/16164244/179861652-4a59808a-c0ed-4025-9b0e-e1459e251d8a.png" /> <img alt="浮之静" width="250" src="https://user-images.githubusercontent.com/16164244/179861932-29036f22-45d9-4345-be14-d804faf2865f.png" />
 
 ## License
