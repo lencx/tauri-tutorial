@@ -1,6 +1,6 @@
 [package]
 name = "omb"
-version = "0.1.0"
+version = "0.0.0"
 description = "Oh My Box"
 authors = ["lencx <cxin1314@gmail.com>"]
 license = "MIT"

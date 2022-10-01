@@ -98,9 +98,13 @@ jobs:
     needs: [create-release, build-tauri]
 
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: 16
+      - run: yarn add -D minimist esno typescript
       - run: yarn updater -v=${GITHUB_REF:11}
 
       - name: Deploy install.json

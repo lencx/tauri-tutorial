@@ -1,7 +1,7 @@
 {
   "name": "omb",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.0.0",
   "author": "lencx <cxin1314@gmail.com>",
   "scripts": {
     "dev": "vite --port=4096",
@@ -52,7 +52,7 @@
     "esno": "^0.16.3",
     "minimist": "^1.2.6",
     "sass": "^1.53.0",
-    "typescript": "^4.6.3",
+    "typescript": "^4.8.4",
     "unocss": "^0.33.2",
     "vite": "^3.0.4",
     "vite-plugin-rsw": "^2.0.8",
