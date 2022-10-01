@@ -1,13 +1,9 @@
-// import { useEffect } from 'react';
-// import path from '@tauri-apps/api/path';
-
-import OmbCard, { OmbItem, OmbIcon } from '@/components/OmbCard';
+import OmbCard, { OmbIcon } from '@/components/OmbCard';
 import SwitchLang from '@/components/SwitchLang';
-import useI18n from '@/hooks/useI18n';
-// import ohmyboxIcon from '@/oh-my-box.svg';
+// import useI18n from '@/hooks/useI18n';
 
 export default function DashboardView() {
-  const t = useI18n(['dashboard', 'tools', 'game']);
+  // const t = useI18n(['dashboard', 'tools', 'game']);
 
   return (
     <div className="p-5">

@@ -8,7 +8,8 @@
     "build": "rsw build && tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "rsw": "rsw"
+    "rsw": "rsw",
+    "updater": "esno ./scripts/updater.ts"
   },
   "dependencies": {
     "@floating-ui/react-dom-interactions": "^0.6.0",
@@ -17,7 +18,7 @@
     "@iconify-icons/mdi": "^1.2.11",
     "@iconify/react": "^3.2.1",
     "@monaco-editor/react": "^4.4.5",
-    "@tauri-apps/api": "^1.0.2",
+    "@tauri-apps/api": "^1.1.0",
     "allotment": "^1.17.0",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.2",
@@ -42,10 +43,14 @@
     "@types/highlight.js": "^10.1.0",
     "@types/lodash": "^4.14.182",
     "@types/markdown-it": "^12.2.3",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.7.23",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/uuid": "^8.3.4",
     "@vitejs/plugin-react": "^2.0.0",
+    "esno": "^0.16.3",
+    "minimist": "^1.2.6",
     "sass": "^1.53.0",
     "typescript": "^4.6.3",
     "unocss": "^0.33.2",

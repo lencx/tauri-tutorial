@@ -1,0 +1,23 @@
+{
+  "version": "v123",
+  "notes": "OhMyBox version",
+  "pub_date": "2022-10-01T14:05:35.390Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v123//OhMyBox.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v123//OhMyBox.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v123//oh-my-box_123_amd64.AppImage"
+    },
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v123//OhMyBox_123_x64_en-US.msi"
+    }
+  }
+}

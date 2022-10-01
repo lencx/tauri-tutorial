@@ -18,9 +18,12 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
+          highlight: ['highlight.js'],
           utils: ['lodash', 'uuid', 'dayjs', 'clsx'],
-          react: ['react', 'react-dom', 'react-router-dom'],
-          i18next: ['i18next', 'react-i18next'],
+          comps: ['react-colorful', '@floating-ui/react-dom-interactions', 'allotment', 'framer-motion', 'rc-slider'],
+          react: ['react', 'react-dom', 'react-router-dom', '@iconify/react', '@monaco-editor/react', 'jotai'],
+          i18next: ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          md: ['markdown-it', 'github-markdown-css'],
         }
       }
     }
