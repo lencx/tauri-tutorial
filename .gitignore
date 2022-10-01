@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+/updater
+
 # rsw
 .rsw/
 target/
