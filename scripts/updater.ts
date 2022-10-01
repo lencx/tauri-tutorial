@@ -35,11 +35,11 @@ const updaterInfo = {
     },
     'linux-x86_64': {
       signature: '',
-      url: `${baseURL}/oh-my-box_${argv.v}_amd64.AppImage`
+      url: `${baseURL}/oh-my-box_${argv.v}_amd64.AppImage.tar.gz`
     },
     'windows-x86_64': {
       signature: '',
-      url: `${baseURL}/OhMyBox_${argv.v}_x64_en-US.msi`
+      url: `${baseURL}/OhMyBox_${argv.v}_x64_en-US.msi.zip`
     }
   }
 }
@@ -48,4 +48,5 @@ if (!fs.existsSync('updater')) {
   fs.mkdirSync('updater');
 }
 
-fs.writeFileSync('./updater/app.json', JSON.stringify(updaterInfo, null, 2));
+fs.writeFileSync('./updater/install.json', JSON.stringify(updaterInfo, null, 2));
+console.log('Generate updater/install.json');

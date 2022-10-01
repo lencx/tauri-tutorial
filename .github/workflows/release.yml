@@ -101,9 +101,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: yarn updater -v=${{ needs.create-release.steps.get_version.outputs.VERSION }}
+      - run: yarn updater -v=${GITHUB_REF:11}
 
-      - name: Deploy
+      - name: Deploy install.json
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
