@@ -28,11 +28,11 @@ const Tabs: React.FC<TabsProps> = ({ className, children, onChange }) => {
   return (
     <div className={clsx('omb-tabs', className)}>
       <div className="omb-tabs-head">
-        {tabs?.map((node, idx) => {
+        {tabs?.map((node: any, idx) => {
           return (
             <div
               key={+idx}
-              onClick={() => handleChange(node.props.tabKey, idx)}
+              onClick={() => handleChange(node?.props?.tabKey, idx)}
               className={clsx({ active: activeIndex === idx })}
             >
               {node.props.tab}
