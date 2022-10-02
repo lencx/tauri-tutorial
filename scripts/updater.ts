@@ -22,7 +22,7 @@ const baseURL = `https://github.com/lencx/OhMyBox/releases/download/v${argv.v}`;
 // \src-tauri\target\release\bundle\msi\OhMyBox_0.1.1_x64_en-US.msi.zip
 const updaterInfo = {
   version: `v${argv.v}`,
-  notes: `OhMyBox version`,
+  notes: `🔮 Development toolbox, and more...`,
   pub_date: new Date(),
   platforms: {
     'darwin-x86_64': {

@@ -1,7 +1,7 @@
 [package]
 name = "omb"
-version = "0.0.0"
-description = "Oh My Box"
+version = "0.1.5"
+description = "OhMyBox"
 authors = ["lencx <cxin1314@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/lencx/OhMyBox"
@@ -17,7 +17,13 @@ tauri-build = { version = "1.1.1", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.1.1", features = ["api-all", "icon-png", "macos-private-api", "system-tray", "updater"] }
+tauri = { version = "1.1.1", features = [
+  "api-all",
+  "icon-png",
+  "macos-private-api",
+  "system-tray",
+  "updater",
+] }
 thiserror = "1.0"
 window-vibrancy = "0.2.0"
 
