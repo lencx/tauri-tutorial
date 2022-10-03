@@ -1,0 +1,36 @@
+{
+  "name": "OhMyBox",
+  "version": "v0.1.7",
+  "notes": "feat: updater",
+  "pub_date": "2022-10-03T16:01:37.317Z",
+  "platforms": {
+    "win64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNlpLU2N2bTlZVCtWcjFNZ3l2WDN6UGN0Qm5JeGRWY3VhVW9odTZXc2xJcGFHdWdNNHU0S051YTlsN3pYQ0xiUnRXQ3J5TDZGb3BPS0lhMHNUTmVucFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0ODEyODI1CWZpbGU6T2hNeUJveF8wLjEuN194NjRfZW4tVVMubXNpLnppcApkUkR2ZEwwWFVJUzl4Z1pKQ0pGZmp4T1MzVGdGemVQdTBZS3ZHNGhTSG1yd3Zycm9Jc2o4SGFydDgydERNNmpCRXMvTkVCVkdsN2U1bzZnSmE5WEJCZz09Cg==",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/OhMyBox_0.1.7_x64_en-US.msi.zip"
+    },
+    "linux": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNmNaMUYrU1RzRG84WFdld2xzV3lKRi9TSzBXbzk1Vk9JWHRNY3dNOGxwekNkMmM4N3U2ZW0wV1Rrb3dvYklCcmRqK2JHekMzNzQxUzF1MXEwOWVWTFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0Nzk0MzQxCWZpbGU6b2gtbXktYm94XzAuMS43X2FtZDY0LkFwcEltYWdlLnRhci5negpKZklydGV1QkVoejg0UzQ4aFg3U25TSWY1ajdYVUNnUlYyZWx0cG5LVEFBSnV6cVMzWUVHK2hQT25ucUdWQkRUZ2xyWUJjZGlwcEZmaitGdXozMnBCQT09Cg==",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/oh-my-box_0.1.7_amd64.AppImage.tar.gz"
+    },
+    "darwin": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNmVrKzJ3S2ZqaG5Gakw3clBiM2V0YjFyNEltQVFMMm9nbTMyaVk1UklrYjlVdk16OXh1bzhUK3dDQVZQbWQ4Zi9MYThvdjdWT2NucDIvQWJvcUtwYkEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0Nzk0NzE5CWZpbGU6T2hNeUJveC5hcHAudGFyLmd6ClA1VSsvVE5XdUVrM3NuMUF2Rjd5TWJrdWd4R1lpanM0N3lncVNvb2NKZWNPaXRjU2VpcGpKeEp0M1ZmRm1mMERtelNuRVRMTjA1VkxMYVVhYjJsYUNnPT0K",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/OhMyBox.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNmVrKzJ3S2ZqaG5Gakw3clBiM2V0YjFyNEltQVFMMm9nbTMyaVk1UklrYjlVdk16OXh1bzhUK3dDQVZQbWQ4Zi9MYThvdjdWT2NucDIvQWJvcUtwYkEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0Nzk0NzE5CWZpbGU6T2hNeUJveC5hcHAudGFyLmd6ClA1VSsvVE5XdUVrM3NuMUF2Rjd5TWJrdWd4R1lpanM0N3lncVNvb2NKZWNPaXRjU2VpcGpKeEp0M1ZmRm1mMERtelNuRVRMTjA1VkxMYVVhYjJsYUNnPT0K",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/OhMyBox.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNmVrKzJ3S2ZqaG5Gakw3clBiM2V0YjFyNEltQVFMMm9nbTMyaVk1UklrYjlVdk16OXh1bzhUK3dDQVZQbWQ4Zi9MYThvdjdWT2NucDIvQWJvcUtwYkEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0Nzk0NzE5CWZpbGU6T2hNeUJveC5hcHAudGFyLmd6ClA1VSsvVE5XdUVrM3NuMUF2Rjd5TWJrdWd4R1lpanM0N3lncVNvb2NKZWNPaXRjU2VpcGpKeEp0M1ZmRm1mMERtelNuRVRMTjA1VkxMYVVhYjJsYUNnPT0K",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/OhMyBox.app.tar.gz"
+    },
+    "linux-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNmNaMUYrU1RzRG84WFdld2xzV3lKRi9TSzBXbzk1Vk9JWHRNY3dNOGxwekNkMmM4N3U2ZW0wV1Rrb3dvYklCcmRqK2JHekMzNzQxUzF1MXEwOWVWTFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0Nzk0MzQxCWZpbGU6b2gtbXktYm94XzAuMS43X2FtZDY0LkFwcEltYWdlLnRhci5negpKZklydGV1QkVoejg0UzQ4aFg3U25TSWY1ajdYVUNnUlYyZWx0cG5LVEFBSnV6cVMzWUVHK2hQT25ucUdWQkRUZ2xyWUJjZGlwcEZmaitGdXozMnBCQT09Cg==",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/oh-my-box_0.1.7_amd64.AppImage.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSOGZLZEpvdzBMNlpLU2N2bTlZVCtWcjFNZ3l2WDN6UGN0Qm5JeGRWY3VhVW9odTZXc2xJcGFHdWdNNHU0S051YTlsN3pYQ0xiUnRXQ3J5TDZGb3BPS0lhMHNUTmVucFFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNjY0ODEyODI1CWZpbGU6T2hNeUJveF8wLjEuN194NjRfZW4tVVMubXNpLnppcApkUkR2ZEwwWFVJUzl4Z1pKQ0pGZmp4T1MzVGdGemVQdTBZS3ZHNGhTSG1yd3Zycm9Jc2o4SGFydDgydERNNmpCRXMvTkVCVkdsN2U1bzZnSmE5WEJCZz09Cg==",
+      "url": "https://github.com/lencx/OhMyBox/releases/download/v0.1.7/OhMyBox_0.1.7_x64_en-US.msi.zip"
+    }
+  }
+}
