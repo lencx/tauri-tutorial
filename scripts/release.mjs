@@ -29,7 +29,7 @@ async function release() {
   packageJson.version = nextVersion;
 
   const nextTag = `v${nextVersion}`;
-  await updatelog(nextTag);
+  await updatelog(nextTag, 'release');
 
   fs.writeFileSync('./package.json', JSON.stringify(packageJson, null, 2));
 

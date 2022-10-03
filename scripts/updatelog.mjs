@@ -3,7 +3,7 @@ import path from 'path';
 
 const UPDATE_LOG = 'UPDATE_LOG.md';
 
-export default function updatelog(tag) {
+export default function updatelog(tag, type = 'updater') {
   const reTag = /## v[\d\.]+/;
 
   const file = path.join(process.cwd(), UPDATE_LOG);
@@ -34,7 +34,9 @@ export default function updatelog(tag) {
   });
 
   if (!tagMap?.[tag]) {
-    console.log(`Tag ${tag} does not exist`);
+    console.log(
+      `${type === 'release' ? '[UPDATE_LOG.md] ' : ''}Tag ${tag} does not exist`
+    );
     process.exit(1);
   }
 
