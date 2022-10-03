@@ -1,7 +1,7 @@
 {
   "name": "omb",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.5",
   "author": "lencx <cxin1314@gmail.com>",
   "scripts": {
     "dev": "vite --port=4096",
@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "tauri": "tauri",
     "rsw": "rsw",
-    "updater": "esno ./scripts/updater.ts"
+    "updater": "node scripts/updater.mjs",
+    "release": "node scripts/release.mjs"
   },
   "dependencies": {
     "@floating-ui/react-dom-interactions": "^0.6.0",
@@ -39,18 +40,17 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@actions/github": "^5.1.0",
     "@tauri-apps/cli": "^1.0.5",
     "@types/highlight.js": "^10.1.0",
     "@types/lodash": "^4.14.182",
     "@types/markdown-it": "^12.2.3",
-    "@types/minimist": "^1.2.2",
     "@types/node": "^18.7.23",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/uuid": "^8.3.4",
     "@vitejs/plugin-react": "^2.0.0",
-    "esno": "^0.16.3",
-    "minimist": "^1.2.6",
+    "node-fetch": "^3.2.10",
     "sass": "^1.53.0",
     "typescript": "^4.8.4",
     "unocss": "^0.33.2",
