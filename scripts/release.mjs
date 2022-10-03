@@ -2,11 +2,11 @@ import { createRequire } from 'module';
 import { execSync } from 'child_process';
 import fs from 'fs';
 
-import { resolveUpdateLog } from './updatelog.mjs';
+import updatelog from './updatelog.mjs';
 
 const require = createRequire(import.meta.url);
 
-async function publish() {
+async function release() {
   const flag = process.argv[2] ?? 'patch';
   const packageJson = require('../package.json');
   let [a, b, c] = packageJson.version.split('.').map(Number);
@@ -29,11 +29,11 @@ async function publish() {
   packageJson.version = nextVersion;
 
   const nextTag = `v${nextVersion}`;
-  await resolveUpdateLog(nextTag);
+  await updatelog(nextTag);
 
   fs.writeFileSync('./package.json', JSON.stringify(packageJson, null, 2));
 
-  execSync('git add ./package.json');
+  execSync('git add ./package.json ./UPDATE_LOG.md');
   execSync(`git commit -m "v${nextVersion}"`);
   execSync(`git tag -a v${nextVersion} -m "v${nextVersion}"`);
   execSync(`git push`);
@@ -41,4 +41,4 @@ async function publish() {
   console.log(`Publish Successfully...`);
 }
 
-publish().catch(console.error);
+release().catch(console.error);

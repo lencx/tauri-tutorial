@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { getOctokit, context } from '@actions/github';
 import fs from 'fs';
 
-import { resolveUpdateLog } from './updatelog.mjs';
+import updatelog from './updatelog.mjs';
 
 const token = process.env.GITHUB_TOKEN;
 
@@ -11,8 +11,9 @@ async function updater() {
     console.log('GITHUB_TOKEN is required');
     process.exit(1);
   }
-  // const options = { owner: 'lencx', repo: 'OhMyBox' };
-  const options = { owner: context.repo.owner, repo: context.repo.repo };
+
+  const name = context.repo.repo;
+  const options = { owner: context.repo.owner, repo: name };
   const github = getOctokit(token);
 
   const { data: tags } = await github.rest.repos.listTags({
@@ -32,8 +33,9 @@ async function updater() {
   });
 
   const updateData = {
+    name,
     version: tag.name,
-    notes: resolveUpdateLog(tag.name), // use UPDATE_LOG.md
+    notes: updatelog(tag.name), // use UPDATE_LOG.md
     pub_date: new Date().toISOString(),
     platforms: {
       win64: { signature: '', url: '' }, // compatible with older formats

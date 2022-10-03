@@ -3,7 +3,7 @@ import path from 'path';
 
 const UPDATE_LOG = 'UPDATE_LOG.md';
 
-export function resolveUpdateLog(tag) {
+export default function updatelog(tag) {
   const reTag = /## v[\d\.]+/;
 
   const file = path.join(process.cwd(), UPDATE_LOG);
