@@ -5,7 +5,6 @@ import fs from 'fs';
 import { resolveUpdateLog } from './updatelog.mjs';
 
 const token = process.env.GITHUB_TOKEN;
-const version = process.env.TAG || '0.0.0';
 
 async function updater() {
   if (!token) {
@@ -33,10 +32,9 @@ async function updater() {
   });
 
   const updateData = {
-    name: tag.name,
+    version: tag.name,
     notes: resolveUpdateLog(tag.name), // use UPDATE_LOG.md
     pub_date: new Date().toISOString(),
-    version,
     platforms: {
       win64: { signature: '', url: '' }, // compatible with older formats
       linux: { signature: '', url: '' }, // compatible with older formats
@@ -82,6 +80,7 @@ async function updater() {
     await setAsset(asset, /.AppImage.tar.gz/, ['linux', 'linux-x86_64']);
   });
   await Promise.allSettled(promises);
+
   if (!fs.existsSync('updater')) {
     fs.mkdirSync('updater');
   }

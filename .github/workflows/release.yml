@@ -99,17 +99,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: yarn add -D node-fetch @actions/github
+      - run: yarn
       - run: yarn updater
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # refs/tags/v0.0.0 -> 0.0.0
-          TAG: ${GITHUB_REF:11}
 
       - name: Deploy install.json
         uses: peaceiris/actions-gh-pages@v3
