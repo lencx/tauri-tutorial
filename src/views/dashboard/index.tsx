@@ -1,6 +1,5 @@
 import OmbCard, { OmbIcon } from '@/components/OmbCard';
 import SwitchLang from '@/components/SwitchLang';
-// import useI18n from '@/hooks/useI18n';
 
 export default function DashboardView() {
   // const t = useI18n(['dashboard', 'tools', 'game']);

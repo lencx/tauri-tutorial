@@ -42,7 +42,7 @@ async function updater() {
       linux: { signature: '', url: '' }, // compatible with older formats
       darwin: { signature: '', url: '' }, // compatible with older formats
       'darwin-aarch64': { signature: '', url: '' },
-      'darwin-intel': { signature: '', url: '' },
+      'darwin-x86_64': { signature: '', url: '' },
       'linux-x86_64': { signature: '', url: '' },
       'windows-x86_64': { signature: '', url: '' },
       // 'windows-i686': { signature: '', url: '' }, // no supported
@@ -74,8 +74,8 @@ async function updater() {
     // darwin
     await setAsset(asset, /.app.tar.gz/, [
       'darwin',
+      'darwin-x86_64',
       'darwin-aarch64',
-      'darwin-intel',
     ]);
 
     // linux
