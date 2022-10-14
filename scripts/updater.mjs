@@ -12,8 +12,7 @@ async function updater() {
     process.exit(1);
   }
 
-  const name = context.repo.repo;
-  const options = { owner: context.repo.owner, repo: name };
+  const options = { owner: context.repo.owner, repo: context.repo.repo };
   const github = getOctokit(token);
 
   const { data: tags } = await github.rest.repos.listTags({
@@ -33,7 +32,6 @@ async function updater() {
   });
 
   const updateData = {
-    name,
     version: tag.name,
     notes: updatelog(tag.name), // use UPDATE_LOG.md
     pub_date: new Date().toISOString(),
