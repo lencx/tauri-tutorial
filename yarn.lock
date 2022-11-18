@@ -2140,10 +2140,10 @@ uuid@^8.3.2:
   resolved "https://registry.npmmirror.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
-vite-plugin-rsw@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.npmmirror.com/vite-plugin-rsw/-/vite-plugin-rsw-2.0.8.tgz#e13cb28904de69940cb308b2497fce5c39332cf5"
-  integrity sha512-x0ExBRUUIufg26BuvFGNn6bqSnfRWkqz6eNXz6IWFXB4N7NiyNIDRqzYp+GbLzKq8DwKfYPe1/9jy/fJ8gFJrw==
+vite-plugin-rsw@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.npmmirror.com/vite-plugin-rsw/-/vite-plugin-rsw-2.0.10.tgz#cba8eb494d56abdd0f95b61870269b41f8b42cd7"
+  integrity sha512-n6IgBafVihXksFaAw+eItD0hL+iV+x2nQ6gJ4Ta0qkiDFU1xiBlnik9fzm4sPGFuOz7IJQF0JkhcT+Yp5jwKiQ==
 
 vite-tsconfig-paths@^3.5.0:
   version "3.5.0"

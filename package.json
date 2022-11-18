@@ -4,11 +4,13 @@
   "version": "0.1.7",
   "author": "lencx <cxin1314@gmail.com>",
   "scripts": {
-    "dev": "vite --port=4096",
+    "dev": "concurrently -g --raw \"npm:rsw-watch\" \"vite --port=4096\"",
+    "dev2": "npm run rsw-watch & vite --port=4096",
     "build": "rsw build && tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
     "rsw": "rsw",
+    "rsw-watch": "rsw watch",
     "updater": "node scripts/updater.mjs",
     "release": "node scripts/release.mjs"
   },
@@ -55,7 +57,7 @@
     "typescript": "^4.8.4",
     "unocss": "^0.33.2",
     "vite": "^3.0.4",
-    "vite-plugin-rsw": "^2.0.8",
+    "vite-plugin-rsw": "^2.0.10",
     "vite-tsconfig-paths": "^3.5.0"
   }
 }

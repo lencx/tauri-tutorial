@@ -1,4 +1,8 @@
-<p align="center"><img src="./src/oh-my-box.svg" /></p>
+# Tauri Tutorial
+
+## APP
+
+- [WA+](https://github.com/lencx/WA) - Making a web page more like a desktop application is just the beginning, the possibilities are unlimited, up to your imagination!
 
 ## Pre-installed
 
@@ -36,15 +40,11 @@ yarn rsw watch
 yarn tauri dev
 ```
 
-## APP
-
-- [WA+](https://github.com/lencx/WA) - Make a web page more like a desktop application. Powered by Tauri.
-
 ## 开发教程
 
 > 关注 《浮之静》公众号，回复 `tauri` 进技术交流群
 
-虽然 `Tauri` 已经发布 `v1.0` 版本，但是国内资料少的可怜，我想基于 `Tauri` 开发一款工具集（各种小功能）。并通过写文章的形式来记录开发过程中遇到的各种问题。如果这些文章对你有所帮助，可以 `star` 此项目或者将文章转发给更多有需要的人。大家的支持会给我更大的写作动力，感恩 🙏。
+虽然 `Tauri` 已经发布 `v1.0` 版本，但是国内资料少的可怜，我想基于 `Tauri` 开发一款工具集（各种小功能）。并通过写文章的形式来记录开发过程中遇到的各种问题。如果这些文章对你有所帮助，可以 `star` 此项目或者将文章转发给更多有需要的人。大家的支持会给我更大的写作动力，感恩 🙏。如果你有开源的项目参考了此教程，可以 PR 到此 README.md 下的 APP，让更多的人看到。
 
 - [GitHub Discussions - Tauri 系列](https://github.com/lencx/OhMyBox/discussions?discussions_q=label%3A%22Tauri+%E7%B3%BB%E5%88%97%22)
 - [知乎专栏 - Tauri 系列](https://www.zhihu.com/column/c_1519079232848785408)
